@@ -5,6 +5,11 @@ $(function(){
         track: true
     });
 
+    /* DateDropper */
+    if($('.form-date').length != 0){
+        $(".form-date").dateDropper();
+    }
+
     /* Scroll perso sur le menh à gauche */
     $('#menu').perfectScrollbar();
 
