@@ -1,0 +1,240 @@
+/* Template */
+#main{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+
+#container{
+	overflow: hidden;
+	z-index: 2;
+	position: relative;
+	@include transform(translateX(280px));
+	width: calc(100% - 280px);
+	min-height: 100%;
+	background-color: $grisBleu;
+	@include transition-property(width, transform);
+	@include transition-duration(0.4s);
+	@include transition-timing-function(ease);
+	&.active{
+		@include transform(translateX(280px));
+	}
+}
+
+#content{
+	padding: 30px;
+	position: relative;
+}
+
+#contentTitre{
+	width: 100%;
+	background-color: $grisBlanc;
+	padding: 20px 30px 30px 30px;
+	p{
+		color: $rouge;
+	}
+}
+
+.ui-helper-hidden-accessible{ display: none; }
+
+.ui-tooltip {
+	padding: 8px;
+	position: absolute;
+	z-index: 9999;
+	background-color: $grisClair;
+	font-size: 14px;
+	@include border-radius(3px);
+	div{
+		color: $blanc;
+	}
+}
+
+.loader{
+	color: $grisClair;
+}
+/* Template */
+
+/* Header */
+#header{
+    @include background-image(linear-gradient(to right, $bleu, $turquoise));
+	width: 100%;
+}
+
+#headerAcces{
+	height: 80px;
+	line-height: 80px;
+	padding-left: 30px;
+	color: $blanc;
+	font-weight: 300;
+	float: left;
+	@include transition-property(opacity,color);
+	@include transition-duration(0.3s);
+	@include transition-timing-function(ease);
+	&:hover{
+		opacity: 0.6;
+	}
+	.fa{
+		padding-right: 5px;
+	}
+}
+
+#headerCompte{
+	height: 80px;
+	padding: 0px 20px;
+	float: right;
+	p{
+		@include transition-property(opacity);
+		@include transition-duration(0.3s);
+		@include transition-timing-function(ease);
+		line-height: 80px;
+		cursor: pointer;
+        color: $blanc;
+		&:hover{
+			opacity: 0.6;
+		}
+
+	}
+	.fa-angle-right{
+		@include transition-property(transform);
+		@include transition-duration(0.3s);
+		@include transition-timing-function(ease);
+		padding-left: 5px;
+	}
+	&.active{
+		.fa-angle-right{
+			@include transform(rotateZ(90deg));
+		}
+	}
+}
+
+#headerCompteMenu{
+	width: 200px;
+    .fa{
+        padding-right: 5px;
+    }
+}
+
+#headerDeco{
+	height: 80px;
+	line-height: 80px;
+	float: right;
+	margin-right:30px;
+	font-size: 17px;
+	color: $blanc;
+	@include transition-property(opacity,color);
+	@include transition-duration(0.3s);
+	@include transition-timing-function(ease);
+	&:hover{
+		opacity: 0.6;
+	}
+}
+
+#headerMobile{
+	position: relative;
+	float: left;
+	height: 80px;
+	width: 50px;
+	cursor: pointer;
+	display: none;
+	span{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 22px;
+		height: 2px;
+		display: block;
+		background-color: $blanc;
+		@include transition-property(background);
+		@include transition-duration(0.4s);
+		@include transform(translateX(-50%) translateY(-50%));
+		&::before, &::after{
+			content:'';
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 22px;
+			height: 2px;
+			display: block;
+			background-color: $blanc;
+			@include transform-origin(50%, 50%);
+			@include transition-property(transform);
+			@include transition-duration(0.4s);
+			@include transition-timing-function(ease);
+			@include transform(translateY(-6px));
+		}
+		&::after{
+			@include transform(translateY(6px));
+		}
+	}
+	&.active span{
+		background: transparent;
+	}
+	&.active span::before{
+		@include transform(translateY(0px) rotate(45deg));
+	}
+	&.active span::after{
+		@include transform(translateY(0px) rotate(-45deg));
+	}
+}
+/* Header */
+
+/* Menu */
+#menu {
+	width: 280px;
+	position: fixed;
+	z-index: 1;
+	height: 100%;
+	background-color: $grisFonce;
+	overflow-y: hidden;
+	@include transition-property(transform);
+	@include transition-duration(0.4s);
+	@include transition-timing-function(ease);
+	&.active{
+		@include transform(translateX(0px));
+	}
+}
+
+#menuEntreprise{
+	width: 100%;
+    @include background-image(linear-gradient(to right, $bleu,$bleurClair));
+	text-align: center;
+	height: 80px;
+	p{
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 15px;
+		line-height: 80px;
+		color: $blanc;
+	}
+}
+
+#menuLogo{
+	width: 116px;
+	height: 116px;
+	background-color: darken($grisFonce,5%);
+	margin: 17px auto;
+	@include border-radius(50%);
+	border: 3px solid $turquoise;
+	img{
+		width: 100%;
+	}
+}
+/* Menu */
+
+/* Patch pour tinymce */
+.mce-textbox{
+	&:focus{
+		padding-bottom: 0px;
+		border: 1px solid #c5c5c5;
+	}
+}
+
+.moxman-thumb{
+	img{
+		display: inline !important;
+	}
+}

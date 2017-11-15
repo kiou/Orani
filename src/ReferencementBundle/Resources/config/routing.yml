@@ -1,0 +1,5 @@
+admin_referencement_supprimer_ogimage:
+    path:     /admin/referencement/supprimer-ogimage/{id}
+    defaults: { _controller: ReferencementBundle:Referencement:supprimerOgimageAdmin }
+    requirements:
+        id: \d+

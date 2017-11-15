@@ -1,0 +1,29 @@
+{% set menuUtilisateur = ['admin_user_manager', 'admin_user_ajouter', 'admin_user_modifier', 'admin_user_password'] %}
+{% set menuPage = ['admin_page_manager', 'admin_page_ajouter', 'admin_page_modifier','admin_menu_manager', 'admin_menu_ajouter', 'admin_menu_modifier'] %}
+
+<nav id="menu">
+
+	<div id="menuEntreprise">
+		<p>DevKit2017SF</p>
+	</div>
+
+	<div id="menuLogo">
+		<img src="{{ asset('img/admin/logo.svg') }}" alt="">
+	</div>
+
+	<a href="{{ path('admin_page_index')}}" class="menuNav {{ getCurrentMenu(['admin_page_index']) }}"><i class="fa fa-home"></i> Dashboard</a>
+
+    <a href="#" data-nav="utilisateur-menu" class="menuNav {{ getCurrentMenu(menuUtilisateur) }}"> <i class="fa fa-users"></i> Utilisateurs <i class="fa fa-angle-right"></i></a>
+    <ul id="utilisateur-menu" class="{{ getCurrentMenu(menuUtilisateur) }}">
+        <li class="{{ getCurrentMenu(['admin_user_ajouter']) }}"><a href="{{ path('admin_user_ajouter')}}">Ajouter un utilisateur</a></li>
+        <li class="{{ getCurrentMenu(['admin_user_manager']) }}"><a href="{{ path('admin_user_manager')}}">Gestion des utilisateurs</a></li>
+    </ul>
+
+    <a href="#" data-nav="page-menu" class="menuNav {{ getCurrentMenu(menuPage) }}"> <i class="fa fa-file-text"></i> Pages <i class="fa fa-angle-right"></i></a>
+    <ul id="page-menu" class="{{ getCurrentMenu(menuPage) }}">
+        <li class="{{ getCurrentMenu(['admin_page_ajouter']) }}"><a href="{{ path('admin_page_ajouter')}}">Ajouter une page</a></li>
+        <li class="{{ getCurrentMenu(['admin_page_manager']) }}"><a href="{{ path('admin_page_manager')}}">Gestion des pages</a></li>
+        <li class="{{ getCurrentMenu(['admin_menu_ajouter']) }}"><a href="{{ path('admin_menu_ajouter')}}">Ajouter un onglet menu</a></li>
+        <li class="{{ getCurrentMenu(['admin_menu_manager']) }}"><a href="{{ path('admin_menu_manager')}}">Gestion du menu</a></li>
+    </ul>
+</nav>

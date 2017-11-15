@@ -1,0 +1,15 @@
+{% if data.referencement.ogtitle is not null %}
+    <meta property="og:title" content="{{ data.referencement.ogtitle }}">
+{% endif %}
+
+{% if data.referencement.ogdescription is not null %}
+    <meta property="og:description" content="{{ data.referencement.ogdescription }}">
+{% endif %}
+
+{% if data.referencement.ogurl is not null %}
+    <meta property="og:url" content="{{ data.referencement.ogurl }}">
+{% endif %}
+
+{% if data.referencement.ogimage is not null %}
+    <meta property="og:image" content="{{ app.request.schemeAndHttpHost ~ app.request.baseUrl ~'/'~ data.referencement.ogimage }}">
+{% endif %}

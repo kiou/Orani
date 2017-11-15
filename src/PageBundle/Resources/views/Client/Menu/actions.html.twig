@@ -1,0 +1,5 @@
+{% if menu.destination != 1 %}
+    <a href="{{ menu.lien }}" {% if menu.lien is empty %} class="noLink" {% endif %} target="_blank">{{ menu.titre|raw }}</a>
+{% else %}
+    <a href="{{ app.request.schemeAndHttpHost ~ app.request.baseUrl ~'/' ~ menu.lien }}" {% if menu.lien is empty %} class="noLink" {% endif %}>{{ menu.titre|raw }}</a>
+{% endif %}

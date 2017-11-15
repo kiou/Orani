@@ -1,0 +1,16 @@
+services:
+    recherche.service:
+        class: GlobalBundle\Service\Recherche
+        arguments: ["@session", "@request_stack"]
+
+    fonctions.twig.service:
+        class: GlobalBundle\Service\Twig\GetCurrentMenu
+        arguments: ["@request_stack"]
+        tags:
+          -  { name: twig.extension }
+
+    tool.service:
+        class: GlobalBundle\Service\Tool
+
+    upload.service:
+        class: GlobalBundle\Service\Upload

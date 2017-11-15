@@ -1,0 +1,124 @@
+/* DropDown */
+.dropDown{
+	position: relative;
+}
+
+.dropDownMenu{
+	display: none;
+	position: absolute;
+	background-color: $blanc;
+	padding: 15px 20px;
+	z-index: 999;
+	&.shadow{
+		@include box-shadow($grisTresClair 2px 2px 12px);
+	}
+	ul{
+		list-style: none;
+		a{
+			padding: 3px 0px;
+			color: $grisClair;
+			font-weight: 300;
+			display: block;
+			@include transition-property(opacity,color);
+			@include transition-duration(0.3s);
+			@include transition-timing-function(ease);
+			&:hover{
+				opacity: 0.6;
+			}
+			.fa{
+				padding-left: 5px;
+			}
+		}
+	}
+}
+
+#menu{
+	.menuNav{
+		width: 100%;
+		padding: 17px 20px 17px 25px;
+		display: block;
+		color: $blanc;
+		position: relative;
+		font-weight: 300;
+		@include transition-property(color, background-color);
+		@include transition-duration(0.3s);
+		@include transition-timing-function(ease);
+		.fa:first-child{
+			padding-right: 15px;
+		}
+		.fa-angle-right{
+			position: absolute;
+			right: 15px;
+			color: $grisTresClair;
+			@include transition-property(transform, color);
+			@include transition-duration(0.3s);
+			@include transition-timing-function(ease);
+		}
+		&:hover{
+			color: $turquoise;
+            background-color: lighten($grisFonce,3%);
+			.fa-angle-right{
+				color: $turquoise;
+			}
+		}
+		&.active{
+			.fa-angle-right{
+				@include transform(rotateZ(90deg));
+			}
+		}
+		&.current{
+			color: $turquoise;
+			.fa-angle-right{
+				color: $turquoise;
+				@include transform(rotateZ(90deg));
+			}
+			&:after{
+				content: '';
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				bottom: 0px;
+				width: 5px;
+				background-color: $turquoise;
+			}
+		}
+	}
+	ul{
+		display: none;
+		width: 100%;
+        background-color: darken($grisFonce, 2%);
+		&.current{
+			display: block
+		}
+		li{
+			a{
+                padding:5px 10px 5px 59px;
+				display: block;
+				color: darken($blanc, 30%);
+				font-weight: 300;
+				@include transition-property(color);
+				@include transition-duration(0.3s);
+				@include transition-timing-function(ease);
+                font-size: 14px;
+				.fa{
+					padding-right: 5px;
+					font-size: 13px;
+				}
+				&:hover{
+					color: $turquoise;
+				}
+			}
+			&.current{
+				a{
+					color: $turquoise;
+				}
+			}
+			&:first-child{
+				padding-top: 10px;
+			}
+			&:last-child{
+				padding-bottom: 10px;
+			}
+		}
+	}
+}

@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+
+.table{
+	width: 100%;
+	border-spacing : 0;
+	border-collapse : collapse;
+	th{
+		background-color: $grisClair;
+		color: $blanc;
+		font-weight: 300;
+		font-size: 20px;
+		padding: 16px 0px;
+		&.left{
+			text-align: left;
+			padding-left: 10px;
+		}
+	}
+	tr{
+		background-color: $blanc;
+		&:nth-child(odd){
+			background-color: $grisBlanc;
+		}
+	}
+	td{
+		padding: 10px 0px;
+		text-align: center;
+		&.left{
+			text-align: left;
+			padding-left: 10px;
+		}
+	}
+	&.big{
+		width: 800px;
+	}
+	&.medium{
+		width: 600px;
+	}
+	&.small{
+		width: 450px;
+	}
+}
+
+.tableDate{
+	color: $grisTresClair;
+	font-style: italic;
+	padding-bottom: 5px;
+	font-size: 14px;
+}
+
+.tableAction{
+	font-size: 24px;
+	color: $grisClair;
+	@include transition-property(opacity);
+	@include transition-duration(0.4s);
+	@include transition-timing-function(ease);
+	&:hover{
+		opacity: 0.4;
+	}
+	&.turquoise{
+		color: $turquoise;
+	}
+	&.rouge{
+		color: $rouge;
+	}
+}
+
+.tableImage,
+.tableVideo{
+    width: 90%;
+    margin: 0px 5%;
+}
+
+.tableAltIcon{
+    font-size: 60px;
+    padding: 20px;
+    color: $grisBleu;
+}
+
+.tableIcon{
+    font-size: 60px;
+    padding: 20px;
+    color: $grisFonce;
+}

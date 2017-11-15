@@ -1,0 +1,50 @@
+/* Menu sortable administration */
+.sortable{
+    li{
+        > div{
+            background-color: #fff;
+            padding: 17px;
+            margin-bottom: 1px;
+            position: relative;
+            @include transition-property(background-color);
+            @include transition-duration(0.4s);
+            @include transition-timing-function(ease);
+        }
+        /* Etat à la selection */
+        &.ui-sortable-helper{
+            > div{
+                background: lighten($grisBleu,9%);
+            }
+        }
+        /* Etat placeholder */
+        &.placeholder{
+            background-color: $turquoise;
+            padding: 17px;
+            margin-bottom: 2px;
+        }
+        /* Icone pour la drag */
+        .fa-ellipsis-v{
+            font-size: 17px;
+            margin-right: 10px;
+        }
+        .sortableAction{
+            position: absolute;
+            right: 17px;
+            top: 14px;
+        }
+        .tableAction{
+            margin-left: 20px;
+        }
+    }
+
+    /* Identation des sous menu */
+    ol,ul{
+        margin-left: 20px;
+        ol,ul{
+            margin-left: 30px;
+            ol,ul{
+                margin-left: 30px;
+            }
+        }
+    }
+}

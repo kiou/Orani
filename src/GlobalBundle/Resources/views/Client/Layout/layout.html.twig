@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<title>{% block metaTitle %}{% endblock %}</title>
+
+	<meta name="description" content="{% block metaDescription %}{% endblock %}">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; height=device-height; initial-scale=1; minimum-scale=1; maximum-scale=1">
+
+    {% block openGraph %}{% endblock %}
+
+	<link rel="icon" type="image/png" href="{{ asset('img/layout/favicon.png') }}">
+	<link href="{{ asset('css/client/app.css')}}" rel="stylesheet" type="text/css">
+
+	{% block css %}{% endblock %}
+</head>
+
+<body>
+
+	<main class="main">
+
+        <!-- Le menu -->
+        {{ render(controller('PageBundle:Menu:managerClient')) }}
+
+        <div class="contentTitle">
+            {% block contentitle %}
+            {% endblock %}
+        </div>
+
+        <!-- Breadcrumb au dessus du contenu -->
+        {% block breadcrumb %}
+        {% endblock %}
+
+        <!-- Contenu principal du site -->
+        <div class="content">
+
+            <!-- Affichage des messages en session -->
+            {{ include("GlobalBundle:Client/Include:flashbag.html.twig") }}
+
+            {% block content %}
+            {% endblock %}
+
+        </div>
+
+	</main>
+	
+	<!-- Librairies javascript -->
+	{% if app.environment == 'prod' %}
+		<script type="text/javascript" src="{{ asset('js/client/app_min.js')}}"></script>
+	{% else %}
+		<script type="text/javascript" src="{{ asset('js/jquery/jquery.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/superfish.js')}}"></script>
+		<script type="text/javascript" src="{{ asset('js/client/app.js')}}"></script>
+	{% endif %}
+    {% block script %}{% endblock %}
+
+</body>
+</html>

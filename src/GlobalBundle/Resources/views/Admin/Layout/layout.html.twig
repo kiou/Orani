@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1;">
+	<title>Administration</title>
+	<link rel="icon" type="image/png" href="{{ asset('img/admin/favicon.png') }}">
+	<link href="{{ asset('js/scroll/scroll.css')}}" rel="stylesheet" type="text/css">
+	{% block cssBefore %}{% endblock %}
+	<link href="{{ asset('css/admin/app.css')}}" rel="stylesheet" type="text/css">
+	{% block cssAfter %}{% endblock %}
+</head>
+
+<body>
+	
+	<main id="main">
+			
+		<!-- Le menu -->
+		{{ include("GlobalBundle:Admin/Include:menu.html.twig") }}
+
+		<div id="container">
+			
+			<!-- Le header -->
+			{{ include("GlobalBundle:Admin/Include:header.html.twig") }}
+			
+			<!-- Titre principal de la page -->
+			<div id="contentTitre">
+				<h1>{% block contentTitre %}Bienvenue sur l'administration{% endblock %}</h1>
+			</div>
+
+			<!-- Breadcrumb au dessus du contenu -->
+			{% block breadcrumb %}
+            {% endblock %}      
+
+			<div id="content">
+
+				<!-- Affichage des messages en session -->
+				{{ include("GlobalBundle:Admin/Include:flashbag.html.twig") }}
+				
+				<!-- Contenu principal -->
+				{% block content %}
+				{% endblock %}
+
+			</div>
+
+		</div>
+
+	</main>
+
+	<script type="text/javascript" src="{{ asset('js/jquery/jquery.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('js/jquery/jquery-ui.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('js/scroll/scroll.js')}}"></script>
+	{% block scriptBefore %}{% endblock %}
+	<script type="text/javascript" src="{{ asset('js/admin/app.js')}}"></script>
+	{% block scriptAfter %}{% endblock %}
+
+</body>
+</html>

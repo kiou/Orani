@@ -1,0 +1,46 @@
+.btn{
+	@include border-radius(3px);
+	display: inline-block;
+	padding: 6px 12px;
+	border: 1px solid transparent;
+	color: #fff;
+	background-color: $grisClair;
+	border-color: darken($grisClair, 5%);
+	font-size: 16px;
+	font-weight: 300;
+	@include transition-property(background, border-color);
+	@include transition-duration(0.3s);
+	@include transition-timing-function(ease);
+	&:hover{
+		background-color: darken($grisClair, 5%);
+		border-color: darken($grisClair, 11%);	
+	}
+	:active{
+		@include box-shadow(inset 0 3px 5px rgba(0,0,0,.160));
+	}
+	&.turquoise{
+		background-color: $turquoise;
+		border-color: darken($turquoise, 5%);
+		&:hover{
+			background-color: darken($turquoise, 5%);
+			border-color: darken($turquoise, 11%);	
+		}
+		&:active{
+			 @include box-shadow(inset 0 3px 5px rgba(0,0,0,.160));
+		}
+	}
+	&.rouge{
+		background-color: $rouge;
+		border-color:  darken($rouge, 5%);
+		&:hover{
+			background-color: darken($rouge, 5%);
+			border-color: darken($rouge, 11%);	
+		}
+		&:active{
+			 @include box-shadow(inset 0 3px 5px rgba(0,0,0,.160));
+		}
+	}
+	.fa{
+		margin-right: 5px;
+	}
+}

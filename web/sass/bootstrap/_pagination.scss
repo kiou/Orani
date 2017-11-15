@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+#pagination{
+	width: 100%;
+	padding: 20px 0px;
+	ul li{
+		list-style: none;
+		float: left;
+		margin-right: 3px;
+		a,p{
+			color: $grisClair;
+			padding: 7px 11px;
+			display: block;
+			@include border-radius(3px);
+		}
+		&.active{
+			p{
+				background-color: $grisClair;
+				color: $blanc;
+			}
+		}
+		&:hover{
+			a{
+				background-color: $rouge;
+				color: $blanc;
+			}
+		}
+	}
+}

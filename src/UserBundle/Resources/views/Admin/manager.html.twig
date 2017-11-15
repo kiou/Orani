@@ -1,0 +1,87 @@
+{% extends "GlobalBundle:Admin/Layout:layout.html.twig" %}
+
+{% block contentTitre %}Gestion des utilisateurs{% endblock %}
+
+{% block content %}
+	<div id="recherche">
+		<form action="{{ path('admin_user_manager') }}" method="post">
+			<input type="text" name="username" class="form-elem medium" value="{{ recherches.username | default('') }}">
+
+			<button type="submit" name="addRecherche"><i class="fa fa-search"></i></button>
+		</form>
+	</div>
+
+	<table class="table">
+		
+		<tr>
+			<th width="12%"></th>
+			<th class="left" width="43%">Utilisateur</th>
+			<th width="30%">Rôles</th>
+			<th colspan="3" width="15%">Actions</th>
+		</tr>
+
+		{% for utilisateur in pagination %}
+			
+			<tr>
+
+				<td>
+					{% if utilisateur.avatar %}
+						<img class="tableImage" src="{{ asset(utilisateur.uploadDir ~ '/' ~  utilisateur.avatar) }}">
+					{% else %}
+						<i class="tableAltIcon fa fa-user"></i>
+					{% endif %}
+				</td>
+
+				<td class="left">
+					<p class="tableDate">Ajouté le {{ utilisateur.created|date("d/m/Y à H:i") }}</p>
+					{% if utilisateur.changed is not null %}
+						<p class="tableDate">Modifié le {{ utilisateur.changed|date("d/m/Y à H:i") }}</p>
+					{% endif %}
+					<p><strong>{{ utilisateur.nom }} {{ utilisateur.prenom }}</strong></p>
+					<p><a href="mailto:{{ utilisateur.email }}">{{ utilisateur.email }}</a></p>
+				</td>
+
+				<td>
+					{% for role in utilisateur.roles %}
+						{% if role == 'ROLE_ADMIN' %} 
+							<p>Administrateur</p>
+						{% elseif role == 'ROLE_USER' %}
+							<p>Utilisateur</p>
+						{% endif %}
+					{% endfor %}
+				</td>
+
+				{% if utilisateur.isActive == false %}
+					<td data-url="{{ path('admin_user_publier',{'id': utilisateur.id})}}" class="tablePublucation">
+                    	<a href="{{ path('admin_user_publier',{'id': utilisateur.id})}}" title="Publication"><i class="tableAction rouge fa fa-check"></i></a>
+                    </td>
+				{% else %}
+					<td data-url="{{ path('admin_user_publier',{'id': utilisateur.id})}}" class="tablePublucation">
+                    	<a href="{{ path('admin_user_publier',{'id': utilisateur.id})}}" title="Publication"><i class="tableAction turquoise fa fa-check"></i></a>
+                    </td>
+				{% endif %}
+
+				<td>
+                	<a href="{{ path('admin_user_modifier_password',{'id': utilisateur.id})}}" title="Modifier le mot de passe"><i class="tableAction fa fa-unlock-alt"></i></a>
+                </td>
+
+				<td>
+                    <a href="{{ path('admin_user_modifier',{'id': utilisateur.id})}}" title="Modifier l'utilisateur"><i class=" tableAction fa fa-pencil"></i></a>
+                </td>
+
+			</tr>
+
+		{% else %}
+			<tr>
+				<td colspan="6">Aucun utilisateur</td>
+			</tr>
+		{% endfor %}
+
+	</table>
+
+	{# display navigation #}
+	<div class="navigation">
+	    {{ knp_pagination_render(pagination) }}
+	</div>
+
+{% endblock %}

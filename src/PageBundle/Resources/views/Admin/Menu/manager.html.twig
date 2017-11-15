@@ -1,0 +1,57 @@
+{% extends "GlobalBundle:Admin/Layout:layout.html.twig" %}
+
+{% block cssBefore %}
+    <link href="{{ asset('js/sweet/sweet.css')}}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block contentTitre %}Gestion du menu{% endblock %}
+
+{% block content %}
+
+    {% if menus is not empty %}
+
+        <div class="sortable">
+
+            <!-- parents -->
+            <ol class="sortableMenu" data-url="{{ path('admin_menu_manager_update') }}">
+                {% for menu in menus %}
+                    <li id="menuItem_{{ menu.id }}">
+                        <div><p><i class="fa fa-ellipsis-v"></i> {{ menu.titre|raw }}</p> {{ include("PageBundle:Admin/Menu:actions.html.twig",{menu:menu}) }}</div>
+                        {% if menu.enfants is defined %}
+
+                            <!-- enfants -->
+                            <ol>
+                                {% for enfant in menu.enfants %}
+                                    <li id="menuItem_{{ enfant.id }}">
+                                        <div><p><i class="fa fa-ellipsis-v"></i> {{ enfant.titre|raw }}</p>  {{ include("PageBundle:Admin/Menu:actions.html.twig",{menu:enfant}) }}</div>
+                                        {% if enfant.enfants is defined %}
+
+                                            <!-- enfants 2éme niveau -->
+                                            <ol>
+                                                {% for enfantenfant in enfant.enfants %}
+                                                    <li id="menuItem_{{ enfantenfant.id }}">
+                                                        <div><p><i class="fa fa-ellipsis-v"></i> {{ enfantenfant.titre|raw }}</p>  {{ include("PageBundle:Admin/Menu:actions.html.twig",{menu:enfantenfant}) }}</div>
+                                                    </li>
+                                                {% endfor %}
+                                            </ol><!-- Fin enfants 2éme niveau -->
+
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ol> <!-- Fin enfants -->
+
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ol> <!-- Fin parents -->
+
+        </div>
+
+    {% endif %}
+
+{% endblock %}
+
+{% block scriptBefore %}
+    <script type="text/javascript" src="{{ asset('js/sortable.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/sweet/sweet.js')}}"></script>
+{% endblock %}

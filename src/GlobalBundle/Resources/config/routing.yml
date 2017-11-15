@@ -1,0 +1,7 @@
+client_page_index:
+    path:     /
+    defaults: { _controller: GlobalBundle:Global:ClientIndex }
+
+admin_page_index:
+    path:     admin/
+    defaults: { _controller: GlobalBundle:Global:AdminIndex }

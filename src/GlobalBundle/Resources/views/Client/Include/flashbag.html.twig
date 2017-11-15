@@ -1,0 +1,26 @@
+{% for flashMessage in app.session.flashbag.get('error') %}
+    {% if loop.first %} 
+    	<div class="message" id="erreur">
+    	<span class="messageCouleur"></span>
+    	<h3>Erreur</h3> 
+    	<p>
+    {% endif %}
+	
+    {{ flashMessage }}<br>
+
+    {% if loop.last %} </p> </div> {% endif %}
+{% endfor %}
+
+{% for flashMessage in app.session.flashbag.get('succes') %}
+    {% if loop.first %} 
+    	<div class="message" id="succes">
+    	<span class="messageCouleur"></span>
+    	<h3>Succès</h3> 
+    	<p>
+    {% endif %}
+
+    {{ flashMessage }}<br>
+
+    {% if loop.last %} </p> </div> {% endif %}
+{% endfor %}
+

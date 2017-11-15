@@ -1,0 +1,73 @@
+# Page
+admin_page_manager:
+    path:     /admin/page/gestion
+    defaults: { _controller: PageBundle:Page:managerAdmin }
+
+admin_page_ajouter:
+    path:     /admin/page/ajouter
+    defaults: { _controller: PageBundle:Page:ajouterAdmin }
+
+admin_page_publier:
+    path:     /admin/page/publier/{id}
+    defaults: { _controller: PageBundle:Page:publierAdmin }
+    requirements:
+        id: \d+
+
+admin_page_poid:
+    path:     /admin/page/poid/{id}/{poid}
+    defaults:
+        _controller: PageBundle:Page:poidAdmin
+        poid : 1
+    requirements:
+        id: \d+
+        poid: \d+
+
+admin_page_modifier:
+    path:     /admin/page/modifier/{id}
+    defaults: { _controller: PageBundle:Page:modifierAdmin }
+    requirements:
+        id: \d+
+
+admin_page_supprimer:
+    path:     /admin/page/supprimer/{id}
+    defaults: { _controller: PageBundle:Page:supprimerAdmin }
+    requirements:
+        id: \d+
+
+client_page_view:
+    path:     /{slug}/{id}
+    defaults: { _controller: PageBundle:Page:viewClient }
+    requirements:
+        slug: ([a-z-0-9]*)
+        id: \d+
+
+# Menu
+admin_menu_manager:
+    path:     /admin/menu/gestion
+    defaults: { _controller: PageBundle:Menu:managerAdmin }
+
+admin_menu_manager_update:
+    path:     /admin/menu/gestion/modifier
+    defaults: { _controller: PageBundle:Menu:managerUpdateAdmin }
+
+admin_menu_ajouter:
+    path:     /admin/menu/ajouter
+    defaults: { _controller: PageBundle:Menu:ajouterAdmin }
+
+admin_menu_modifier:
+    path:     /admin/menu/modifier/{id}
+    defaults: { _controller: PageBundle:Menu:modifierAdmin }
+    requirements:
+        id: \d+
+
+admin_menu_publier:
+    path:     /admin/menu/publier/{id}
+    defaults: { _controller: PageBundle:Menu:publierAdmin }
+    requirements:
+        id: \d+
+
+admin_menu_supprimer:
+    path:     /admin/menu/supprimer/{id}
+    defaults: { _controller: PageBundle:Menu:supprimerAdmin }
+    requirements:
+        id: \d+

@@ -1,0 +1,62 @@
+{% extends "GlobalBundle:Admin/Layout:layout.html.twig" %}
+
+{% block contentTitre %}Mes informations{% endblock %}
+
+{% block cssBefore %}
+    <link href="{{ asset('js/sweet/sweet.css')}}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block breadcrumb %}
+	<div id="breadcrumb">
+		{{ include("GlobalBundle:Admin/Include:breadcrumb.html.twig", {'breadcrumb':breadcrumb }) }}
+	</div>
+{% endblock %}
+
+{% block content %}
+	{{ form_start(form, {'attr': {'class': 'form-horizontal', novalidate: 'novalidate'}}) }}
+
+		{{ form_errors(form) }}
+
+		{{ form_label(form.username, "Pseudonyme *") }}
+		{{ form_errors(form.username) }}
+		{{ form_widget(form.username, {'attr': {'class': 'form-elem big'}}) }}
+
+        {{ form_label(form.nom, "Nom *") }}
+        {{ form_errors(form.nom) }}
+        {{ form_widget(form.nom, {'attr': {'class': 'form-elem big'}}) }}
+
+        {{ form_label(form.prenom, "Prénom *") }}
+        {{ form_errors(form.prenom) }}
+        {{ form_widget(form.prenom, {'attr': {'class': 'form-elem big'}}) }}
+
+		{{ form_label(form.email, "Email *") }}
+		{{ form_errors(form.email) }}
+		{{ form_widget(form.email, {'attr': {'class': 'form-elem big'}}) }}
+
+		{{ form_label(form.roles, "Rôles *") }}
+		{{ form_errors(form.roles) }}
+		{{ form_widget(form.roles, {'attr': {'class': 'liste big'}}) }}
+
+        {% if utilisateur.avatar is not empty %}
+            <div id="ajaxImage1">
+                <div class="form-image big">
+                    <img src="{{ asset(utilisateur.uploadDir ~ '/' ~  utilisateur.avatar) }}">
+                    <br>
+                    <a href="{{ path('admin_user_supprimer_avatar',{'id': utilisateur.id})}}" class="btn rouge sweetDeleteImage" data-parent="ajaxImage1"><i class="fa fa-trash"></i> Supprimer</a>
+                </div>
+            </div>
+        {% endif %}
+
+		{{ form_label(form.file, "Avatar") }}
+		{{ form_errors(form.file) }}
+		{{ form_widget(form.file, {'attr': {'class': 'form-elem big'}}) }}
+		<div class="form-legende">
+			L'image doit faire exactement 150px par 150px<br>Le format doit être (jpg, png)<br>Le poid ne doit pas dépacer 1Mo
+		</div>
+
+	{{ form_end(form) }}
+{% endblock %}
+
+{% block scriptBefore %}
+    <script type="text/javascript" src="{{ asset('js/sweet/sweet.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,10 @@
+<div class="sortableAction">
+    {% if menu.isActive == false %}
+        <a href="#" data-url="{{ path('admin_menu_publier',{'id': menu.id})}}" title="Publication" class="tablePublucation"><i class="tableAction rouge fa fa-check"></i></a>
+    {% else %}
+        <a href="#" data-url="{{ path('admin_menu_publier',{'id': menu.id})}}" title="Publication" class="tablePublucation"><i class="tableAction turquoise fa fa-check"></i></a>
+    {% endif %}
+
+    <a href="{{ path('admin_menu_modifier',{'id': menu.id})}}" title="Modifier la menu"><i class=" tableAction fa fa-pencil"></i></a>
+    <a href="{{ path('admin_menu_supprimer',{'id': menu.id})}}" class="sweetDelete" title="Supprimer le menu" data-title="Supprimer le menu" data-text="êtes vous sur ?"><i class="tableAction fa fa-trash"></i></a>
+</div>

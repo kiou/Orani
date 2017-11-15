@@ -1,0 +1,87 @@
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sf-menu li {
+	position: relative;
+}
+
+.sf-menu ul {
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+	min-width: 250px;
+}
+
+.sf-menu > li {
+	float: left;
+}
+
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+	display: block;
+}
+
+.sf-menu ul ul {
+	top: 0;
+	left: 100%;
+}
+
+.sf-menu {
+	float: left;
+}
+
+.sf-menu {
+	a{
+		display: block;
+		position: relative;
+		padding: 15px 17px;
+		color: #fff;
+		font-weight: 500;
+		font-size: 15px;
+	}
+	ul{
+		li{
+			a{
+				padding: 15px 17px;
+			}
+		}
+	}
+}
+
+.sf-menu ul li {
+	background: $gris;
+	@include transition-property(background-color);
+	@include transition-duration(0.3s);
+	@include transition-timing-function(ease);
+}
+
+.sf-menu li:hover,
+.sf-menu li.sfHover {
+	background-color: lighten($gris,15%);
+}
+
+.sf-arrows .sf-with-ul {
+	padding-right: 35px;
+}
+
+.sf-arrows .sf-with-ul:after {
+	content:'\f107';
+	font-family: FontAwesome;
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	margin-top: -8px;
+}
+
+.sf-arrows ul .sf-with-ul:after {
+	content:'\f105';
+	font-family: FontAwesome;
+	margin-top: -8px;
+	margin-right: -3px;
+}

@@ -1,0 +1,31 @@
+<div class="form-bloc">
+    <h3>Référencement</h3>
+
+    {{ form_label(form.referencement.title, "Meta title *") }}
+    {{ form_errors(form.referencement.title) }}
+    {{ form_widget(form.referencement.title, {'attr': {'class': 'form-elem big'}}) }}
+
+    {{ form_label(form.referencement.description, "Meta description *") }}
+    {{ form_errors(form.referencement.description) }}
+    {{ form_widget(form.referencement.description, {'attr': {'class': 'form-elem big'}}) }}
+</div>
+
+<div class="form-bloc">
+    <h3>Référencement réseaux sociaux </h3>
+
+    {{ form_label(form.referencement.ogtitle, "og:title") }}
+    {{ form_errors(form.referencement.ogtitle) }}
+    {{ form_widget(form.referencement.ogtitle, {'attr': {'class': 'form-elem big'}}) }}
+
+    {{ form_label(form.referencement.ogdescription, "og:description") }}
+    {{ form_errors(form.referencement.ogdescription) }}
+    {{ form_widget(form.referencement.ogdescription, {'attr': {'class': 'form-elem big'}}) }}
+
+    {{ form_label(form.referencement.ogurl, "og:url") }}
+    {{ form_errors(form.referencement.ogurl) }}
+    {{ form_widget(form.referencement.ogurl, {'attr': {'class': 'form-elem big'}}) }}
+
+    {{ form_label(form.referencement.fileogimage, "og:image") }}
+    {{ form_errors(form.referencement.fileogimage) }}
+    {{ form_widget(form.referencement.fileogimage, {'attr': {'class': 'form-elem big'}}) }}
+</div>

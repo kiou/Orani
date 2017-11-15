@@ -1,0 +1,31 @@
+{% extends "GlobalBundle:Client/Layout:layout.html.twig" %}
+
+{% block metaTitle %}Demande de réinitialisation{% endblock %}
+
+{% block contentitle %}
+    <h1>Demande de réinitialisation</h1>
+{% endblock %}
+
+{% block breadcrumb %}
+    <div id="breadcrumb">
+        {{ include("GlobalBundle:Client/Include:breadcrumb.html.twig", {'breadcrumb':breadcrumb }) }}
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    {{ form_start(form, {'attr': {'class': 'form-horizontal', novalidate: 'novalidate'}}) }}
+
+        {{ form_errors(form) }}
+
+        {{ form_label(form.email, "Email *") }}
+        {{ form_errors(form.email) }}
+        {{ form_widget(form.email, {'attr': {'class': 'form-elem big'}}) }}<br>
+
+        {{ form_widget(form.Enregistrer, { 'label': 'Envoyer ma demande' }) }}
+
+        {{ form_rest(form) }}
+
+    {{ form_end(form) }}
+
+{% endblock %}

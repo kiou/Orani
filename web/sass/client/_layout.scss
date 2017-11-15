@@ -1,0 +1,18 @@
+.main{
+    max-width: 1100px;
+    margin: 0px auto;
+}
+
+.header{
+    background-color: $grisClair;
+}
+
+.contentTitle{
+    background-color: lighten($grisClair,10%);
+    padding:20px 0px;
+    text-align: center;
+}
+
+.content{
+    padding: 20px 0px;
+}

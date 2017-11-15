@@ -1,0 +1,28 @@
+#breadcrumb{
+	width: 100%;
+	ul{
+		list-style: none;
+		display: inline-block;
+		background-color: $turquoise;
+		padding: 10px 30px;
+		li{
+			display: inline-block;
+			font-size: 14px;
+			color: #fff;
+			a{
+				font-size: 14px;
+				color: lighten($turquoise, 20%);
+				@include transition-property(opacity);
+				@include transition-duration(0.3s);
+				@include transition-timing-function(ease);
+				&:hover{
+					opacity: 0.5;
+				}
+			}
+			.divider{
+				padding: 0px 4px;
+				color: lighten($turquoise, 20%);
+			}
+		}
+	}
+}

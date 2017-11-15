@@ -1,0 +1,18 @@
+{% extends "GlobalBundle:Client/Layout:layout.html.twig" %}
+
+{% block metaTitle %}{{ page.referencement.title }}{% endblock %}
+{% block metaDescription %}{{ page.referencement.description }}{% endblock %}
+
+{% block openGraph %}
+    {% include"ReferencementBundle:Client/Include:view.html.twig" with {'data': page} %}
+{% endblock %}
+
+{% block contentitle %}
+    <h1>{{ page.titre }}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="wysiwyg">
+        {{ page.contenu|raw }}
+    </div>
+{% endblock %}
