@@ -153,6 +153,17 @@ $(function(){
 
     });
 
+    /* Alert simple sweet */
+    $(document).on('click','.sweetAlert',function(e){
+        e.preventDefault();
+
+        var lien = $(this);
+        var title = lien.attr('data-title');
+        var text = lien.attr('data-text');
+
+        swal(title, text, "warning");
+    });
+
     /* Changement du poid d'un contenu */
     $('select[name="poid"]').change(function(){
 
