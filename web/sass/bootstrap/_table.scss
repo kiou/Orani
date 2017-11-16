@@ -63,6 +63,9 @@
 	&.rouge{
 		color: $rouge;
 	}
+    &.disabled{
+        opacity:0.4;
+    }
 }
 
 .tableImage,
@@ -81,7 +84,4 @@
     font-size: 60px;
     padding: 20px;
     color: $grisFonce;
-    &.disabled{
-        opacity:0.4;
-    }
 }
