@@ -1,0 +1,95 @@
+{% extends "GlobalBundle:Admin/Layout:layout.html.twig" %}
+
+{% block cssBefore %}
+	<link href="{{ asset('js/sweet/sweet.css')}}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block contentTitre %}Gestion des actualités{% endblock %}
+
+{% block content %}
+	<div id="recherche">
+		<form action="{{ path('admin_actualite_manager') }}" method="post">
+			<input type="text" name="recherche" class="form-elem medium" value="{{ recherches.recherche | default('') }}">
+
+			<button type="submit" name="addRecherche"><i class="fa fa-search"></i></button>
+		</form>
+	</div>
+
+	<table class="table">
+		
+		<tr>
+			<th width="15%"></th>
+			<th class="left" width="55%">Actualité</th>
+            <th width="15%">Ordre<br>Décroissant</th>
+			<th colspan="3" width="15%">Actions</th>
+		</tr>
+
+		{% for actualite in pagination %}
+			
+			<tr>
+
+				<td>
+                    {% if actualite.image %}
+					    <img class="tableImage" src="{{ asset('img/actualite/miniature/' ~ actualite.image) }}">
+                    {% else %}
+                        <i class="tableAltIcon fa fa-picture-o"></i>
+                    {% endif %}
+				</td>
+
+				<td class="left">
+					<p class="tableDate">Ajouté le {{ actualite.created|date("d/m/Y à H:i") }}</p>
+					{% if actualite.changed is not null %}
+						<p class="tableDate">Modifié le {{ actualite.changed|date("d/m/Y à H:i") }}</p>
+					{% endif %}
+					<p><strong>{{ actualite.titre }}</strong></p>
+				</td>
+
+                <td>
+                    <select name="poid" class="form-poid" data-url="{{ path('admin_actualite_poid',{'id': actualite.id})}}">
+                        {% for i in 1..200 %}
+                            {% if actualite.poid == i%}
+                                <option value="{{ i }}" selected>{{ i }}</option>
+                            {% else %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </td>
+
+				{% if actualite.isActive == false %}
+					<td data-url="{{ path('admin_actualite_publier',{'id': actualite.id})}}" class="tablePublucation">
+                    	<a href="{{ path('admin_actualite_publier',{'id': actualite.id})}}" title="Publication"><i class="tableAction rouge fa fa-check"></i></a>
+                    </td>
+				{% else %}
+					<td data-url="{{ path('admin_actualite_publier',{'id': actualite.id})}}" class="tablePublucation">
+                    	<a href="{{ path('admin_actualite_publier',{'id': actualite.id})}}" title="Publication"><i class="tableAction turquoise fa fa-check"></i></a>
+                    </td>
+				{% endif %}
+
+				<td>
+                    <a href="{{ path('admin_actualite_modifier',{'id': actualite.id})}}" title="Modifier l'actualité"><i class=" tableAction fa fa-pencil"></i></a>
+                </td>
+
+				<td>
+                    <a href="{{ path('admin_actualite_supprimer',{'id': actualite.id})}}" class="sweetDelete" title="Supprimer l'actualité" data-title="Supprimer l'actualité" data-text="êtes vous sur ?"><i class=" tableAction fa fa-trash"></i></a>
+                </td>
+			</tr>
+
+		{% else %}
+			<tr>
+				<td colspan="6">Aucune actualité</td>
+			</tr>
+		{% endfor %}
+
+	</table>
+
+	{# display navigation #}
+	<div class="navigation">
+	    {{ knp_pagination_render(pagination) }}
+	</div>
+	
+{% endblock %}
+
+{% block scriptBefore %}
+	<script type="text/javascript" src="{{ asset('js/sweet/sweet.js')}}"></script>
+{% endblock %}

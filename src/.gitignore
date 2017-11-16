@@ -1,0 +1,5 @@
+.htaccess*
+/GlobalBundle
+/ReferencementBundle
+/PageBundle
+/UserBundle

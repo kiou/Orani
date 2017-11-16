@@ -13,3 +13,7 @@ global:
 page:
     resource: "@PageBundle/Resources/config/routing.yml"
     prefix:   /
+
+actualite:
+    resource: "@ActualiteBundle/Resources/config/routing.yml"
+    prefix:   /

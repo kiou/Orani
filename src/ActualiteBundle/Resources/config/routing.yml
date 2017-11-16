@@ -1,0 +1,34 @@
+admin_actualite_manager:
+    path:     /admin/actualite/gestion
+    defaults: { _controller: ActualiteBundle:Actualite:managerAdmin }
+
+admin_actualite_ajouter:
+    path:     /admin/actualite/ajouter
+    defaults: { _controller: ActualiteBundle:Actualite:ajouterAdmin }
+
+admin_actualite_publier:
+    path:     /admin/actualite/publier/{id}
+    defaults: { _controller: ActualiteBundle:Actualite:publierAdmin }
+    requirements:
+        id: \d+
+
+admin_actualite_poid:
+    path:     /admin/actualite/poid/{id}/{poid}
+    defaults:
+        _controller: ActualiteBundle:Actualite:poidAdmin
+        poid : 1
+    requirements:
+        id: \d+
+        poid: \d+
+
+admin_actualite_modifier:
+    path:     /admin/actualite/modifier/{id}
+    defaults: { _controller: ActualiteBundle:Actualite:modifierAdmin }
+    requirements:
+        id: \d+
+
+admin_actualite_supprimer:
+    path:     /admin/actualite/supprimer/{id}
+    defaults: { _controller: ActualiteBundle:Actualite:supprimerAdmin }
+    requirements:
+        id: \d+
