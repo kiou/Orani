@@ -72,5 +72,6 @@ Pour l'administration
 
 * Tinymce : [www.tinymce.com](https://www.tinymce.com/)
 * Filemanager pour tinymce : [www.responsivefilemanager.com](http://www.responsivefilemanager.com/)
-* Crop [fengyuanchen.github.io/cropperjs](https://fengyuanchen.github.io/cropperjs/)
-* Gestion du menu [https://superfish.joelbirch.co/examples/](https://superfish.joelbirch.co/examples/)
+* Crop : [fengyuanchen.github.io/cropperjs](https://fengyuanchen.github.io/cropperjs/)
+* Gestion du menu : [https://superfish.joelbirch.co/examples/](https://superfish.joelbirch.co/examples/)
+* Popup date : [http://felicegattuso.com/projects/datedropper/](http://felicegattuso.com/projects/datedropper/)
