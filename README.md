@@ -1,7 +1,5 @@
 # Orani sur Symfony 3.x
 
-
-
 Mise en place des elements de base pour le developpement d'applications web
 
 
@@ -16,6 +14,7 @@ Mise en place des elements de base pour le developpement d'applications web
 
 ## Modules
 * Orani actualités: https://github.com/kiou/Orani-actualite 
+* Orani événements: https://github.com/kiou/Orani-evenement
 
 
 ## Gestion de contenu
@@ -23,11 +22,9 @@ Mise en place des elements de base pour le developpement d'applications web
 ![alt tag](https://colocarts.com/gitimg/manager2.jpg)
 
 
-
 ## Modifier / ajouter
 
 ![alt tag](https://colocarts.com/gitimg/modifier2.jpg)
-
 
 
 ## Gestion de page et de menu en drag&drop
@@ -35,13 +32,9 @@ Mise en place des elements de base pour le developpement d'applications web
 ![alt tag](https://colocarts.com/gitimg/menu2.jpg)
 
 
-
-
-
 ## Wysiwyg
 
 ![alt tag](https://colocarts.com/gitimg/wysiwyg2.jpg)
-
 
 
 ## Installation
@@ -53,7 +46,6 @@ Mise en place des elements de base pour le developpement d'applications web
 - parametres > app
 
 
-
 ## Compte
 Pour l'administration
 
@@ -62,19 +54,20 @@ Pour l'administration
 * mot de passe : admin
 
 
-
 ## Production
 
 * Minimifier le JS avec GRUNT
 * Minimifier le CSS avec SASS (deja) en place en dev dans le fichier config.rb
 
 
-
-
 ## Module (libraire complementaire)
 
-* Tinymce : [www.tinymce.com](https://www.tinymce.com/)
-* Filemanager pour tinymce : [www.responsivefilemanager.com](http://www.responsivefilemanager.com/)
-* Crop : [fengyuanchen.github.io/cropperjs](https://fengyuanchen.github.io/cropperjs/)
-* Gestion du menu : [https://superfish.joelbirch.co/examples/](https://superfish.joelbirch.co/examples/)
-* Popup date : [http://felicegattuso.com/projects/datedropper/](http://felicegattuso.com/projects/datedropper/)
+* Tinymce: [www.tinymce.com](https://www.tinymce.com/)
+* Filemanager pour tinymce: [www.responsivefilemanager.com](http://www.responsivefilemanager.com/)
+* Crop: [fengyuanchen.github.io/cropperjs](https://fengyuanchen.github.io/cropperjs/)
+* Gestion du menu: [https://superfish.joelbirch.co/examples/](https://superfish.joelbirch.co/examples/)
+* Popup date: [http://felicegattuso.com/projects/datedropper/](http://felicegattuso.com/projects/datedropper/)
+
+## Documentation
+* Commandes courantes: [https://github.com/kiou/Orani/wiki/Commandes-courantes](https://github.com/kiou/Orani/wiki/Commandes-courantes)
+* Mise en ligne et optimisation: [https://github.com/kiou/Orani/wiki/Mise-en-ligne-et-optimisation](https://github.com/kiou/Orani/wiki/Mise-en-ligne-et-optimisation)
