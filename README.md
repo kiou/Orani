@@ -12,7 +12,7 @@ Mise en place des elements de base pour le developpement d'applications web
 * Administration avec Bootstrap(maison) simple d'utilisation / reponsive
 
 
-## Modules
+## Bundles
 * Orani actualités: https://github.com/kiou/Orani-actualite 
 * Orani événements: https://github.com/kiou/Orani-evenement
 
