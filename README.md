@@ -14,6 +14,9 @@ Mise en place des elements de base pour le developpement d'applications web
 * Administration avec Bootstrap(maison) simple d'utilisation / reponsive
 
 
+## Modules
+* Orani actualités: https://github.com/kiou/Orani-actualite 
+
 
 ## Gestion de contenu
 
