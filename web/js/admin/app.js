@@ -5,9 +5,14 @@ $(function(){
         track: true
     });
 
-    /* DateDropper */
+    /* Datepicker */
     if($('.form-date').length != 0){
-        $(".form-date").dateDropper();
+        $('.form-date').datepicker($.datepicker.regional['fr']);
+    }
+
+    /* Timepicker */
+    if($('.form-date-time').length != 0){
+        $('.form-date-time').datetimepicker();
     }
 
     /* Scroll perso sur le menh à gauche */

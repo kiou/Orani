@@ -1,0 +1,158 @@
+/* Datepicker */
+.ui-datepicker{
+    font-size: 14px;
+    color: $grisFonce;
+    @include border-radius(3px);
+
+    a{
+        font-size: 14px;
+        color: $grisFonce;
+    }
+
+    th, td{
+        padding:8px;
+        text-align: center;
+    }
+    
+    td{
+        &:hover{
+            @include border-radius(3px);
+            background-color: $grisTresClair;
+            color: $grisFonce;
+
+            a{color:$grisFonce}
+        }
+    }
+}
+
+.ui-datepicker-header{
+    @include background-image(linear-gradient(to right, $bleu, $turquoise));
+    color: $blanc;
+    padding:15px;
+
+    a{color:$blanc}
+}
+
+.ui-datepicker-calendar{
+    padding:15px;
+    background-color: $blanc;
+}
+
+.ui-datepicker-today{
+    background-color: $turquoise;
+    @include border-radius(3px);
+    color: $blanc;
+
+    a{color:$blanc}
+}
+
+.ui-datepicker-current-day{
+    background-color: $grisTresClair;
+    @include border-radius(3px);
+    color: $grisFonce;
+
+    a{color:$grisFonce}
+}
+
+.ui-datepicker-prev{
+    display: inline-block;
+    padding: 0px 10px 5px 0px;
+    cursor: pointer;
+}
+
+.ui-datepicker-next{
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Timepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { float: left; clear:left; padding: 0 0 0 5px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 40%; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+.ui-timepicker-div .ui_tpicker_unit_hide{ display: none; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; padding: 0 5px 0 0; }
+.ui-timepicker-rtl dl dt{ float: right; clear: right; }
+.ui-timepicker-rtl dl dd { margin: 0 40% 10px 10px; }
+
+/* Shortened version style */
+.ui-timepicker-div.ui-timepicker-oneLine { padding-right: 2px; }
+.ui-timepicker-div.ui-timepicker-oneLine .ui_tpicker_time,
+.ui-timepicker-div.ui-timepicker-oneLine dt { display: none; }
+.ui-timepicker-div.ui-timepicker-oneLine .ui_tpicker_time_label { display: block; padding-top: 2px; }
+.ui-timepicker-div.ui-timepicker-oneLine dl { text-align: right; }
+.ui-timepicker-div.ui-timepicker-oneLine dl dd,
+.ui-timepicker-div.ui-timepicker-oneLine dl dd > div { display:inline-block; margin:0; }
+.ui-timepicker-div.ui-timepicker-oneLine dl dd.ui_tpicker_minute:before,
+.ui-timepicker-div.ui-timepicker-oneLine dl dd.ui_tpicker_second:before { content:':'; display:inline-block; }
+.ui-timepicker-div.ui-timepicker-oneLine dl dd.ui_tpicker_millisec:before,
+.ui-timepicker-div.ui-timepicker-oneLine dl dd.ui_tpicker_microsec:before { content:'.'; display:inline-block; }
+.ui-timepicker-div.ui-timepicker-oneLine .ui_tpicker_unit_hide,
+.ui-timepicker-div.ui-timepicker-oneLine .ui_tpicker_unit_hide:before{ display: none; }
+
+/* Overlays */
+.ui-slider {
+    position: relative;
+    text-align: left;
+    margin-bottom: 5px;
+    border: 1px solid $grisTresClair;
+    border-radius: 3px;
+}
+.ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    -ms-touch-action: none;
+    touch-action: none;
+    background-color: $bleu;
+    @include border-radius(50%);
+    cursor: pointer;
+}
+/* support: IE8 - See #6727 */
+.ui-slider.ui-state-disabled .ui-slider-handle,
+.ui-slider.ui-state-disabled .ui-slider-range {
+    filter: inherit;
+}
+
+.ui-slider-horizontal {
+    height: .8em;
+}
+.ui-slider-horizontal .ui-slider-handle {
+    top: -.3em;
+    margin-left: -.6em;
+}
+.ui-slider-horizontal .ui-slider-range {
+    top: 0;
+    height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min {
+    left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+    right: 0;
+}
+
+.ui-timepicker-div{
+    background-color: $blanc;
+    padding:0px 15px 15px 15px;
+    color: $grisFonce;
+    font-size: 14px;
+
+    a{
+        font-size: 14px;
+        color: $grisFonce;
+    }
+}
+
+.ui-datepicker-current{
+    display: none;
+}
+
+.ui-datepicker-buttonpane{
+    display: none;
+}
