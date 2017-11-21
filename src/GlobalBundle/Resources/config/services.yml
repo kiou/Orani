@@ -19,3 +19,6 @@ services:
 
     upload.service:
         class: GlobalBundle\Service\Upload
+
+    agenda.service:
+        class: GlobalBundle\Service\Agenda
