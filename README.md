@@ -15,7 +15,7 @@ Mise en place des elements de base pour le developpement d'applications web
 ## Bundles
 * Orani actualités: https://github.com/kiou/Orani-actualite 
 * Orani événements: https://github.com/kiou/Orani-evenement
-
+* Orani contact: https://github.com/kiou/Orani-contact
 
 ## Gestion de contenu
 
