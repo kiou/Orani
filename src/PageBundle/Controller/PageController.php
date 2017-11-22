@@ -53,7 +53,7 @@ class PageController extends Controller
         /* La liste des pages */
         $pages = $this->getDoctrine()
                       ->getRepository('PageBundle:Page')
-                      ->getAllPage($recherches['recherche']);
+                      ->getAllPages($recherches['recherche']);
 
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(

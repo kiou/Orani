@@ -11,7 +11,7 @@ namespace PageBundle\Repository;
 class PageRepository extends \Doctrine\ORM\EntityRepository
 {
 
-    public function getAllpage($recherche)
+    public function getAllPages($recherche)
     {
         $qb = $this->createQueryBuilder('p');
 
@@ -26,11 +26,6 @@ class PageRepository extends \Doctrine\ORM\EntityRepository
         $qb->orderBy('p.id', 'DESC');
 
         return $query = $qb->getQuery()->getResult();
-    }
-
-    public function getTata()
-    {
-        die('lol');
     }
 
 }

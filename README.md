@@ -17,6 +17,8 @@ Mise en place des elements de base pour le developpement d'applications web
 * Orani événements: https://github.com/kiou/Orani-evenement
 * Orani contact: https://github.com/kiou/Orani-contact
 * Orani slider: https://github.com/kiou/Orani-slider
+* Orani galerie image: à venir
+* Orani galerie vidéo: à venir
 
 ## Gestion de contenu
 
@@ -68,6 +70,7 @@ Pour l'administration
 * Crop: [fengyuanchen.github.io/cropperjs](https://fengyuanchen.github.io/cropperjs/)
 * Gestion du menu: [https://superfish.joelbirch.co/examples/](https://superfish.joelbirch.co/examples/)
 * Popup date: [http://felicegattuso.com/projects/datedropper/](http://felicegattuso.com/projects/datedropper/)
+* OWL Slider: [https://owlcarousel2.github.io/OwlCarousel2/](https://owlcarousel2.github.io/OwlCarousel2/)
 
 ## Documentation
 * Commandes courantes: [https://github.com/kiou/Orani/wiki/Commandes-courantes](https://github.com/kiou/Orani/wiki/Commandes-courantes)
