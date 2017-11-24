@@ -5,8 +5,7 @@ Mise en place des elements de base pour le developpement d'applications web
 
 * Symfony
 * Composer
-* Sass
-/Compass
+* Sass/Compass
 * Font awesome
 * Grunt
 * Administration avec Bootstrap(maison) simple d'utilisation / reponsive
@@ -17,7 +16,7 @@ Mise en place des elements de base pour le developpement d'applications web
 * Orani événements: https://github.com/kiou/Orani-evenement
 * Orani contact: https://github.com/kiou/Orani-contact
 * Orani slider: https://github.com/kiou/Orani-slider
-* Orani galerie image: à venir
+* Orani galerie image: https://github.com/kiou/Orani-galerieimage
 * Orani galerie vidéo: à venir
 
 ## Gestion de contenu
@@ -69,8 +68,8 @@ Pour l'administration
 * Filemanager pour tinymce: [www.responsivefilemanager.com](http://www.responsivefilemanager.com/)
 * Crop: [fengyuanchen.github.io/cropperjs](https://fengyuanchen.github.io/cropperjs/)
 * Gestion du menu: [https://superfish.joelbirch.co/examples/](https://superfish.joelbirch.co/examples/)
-* Popup date: [http://felicegattuso.com/projects/datedropper/](http://felicegattuso.com/projects/datedropper/)
 * OWL Slider: [https://owlcarousel2.github.io/OwlCarousel2/](https://owlcarousel2.github.io/OwlCarousel2/)
+* Lightbox2: [http://lokeshdhakar.com/projects/lightbox2/](http://lokeshdhakar.com/projects/lightbox2/)
 
 ## Documentation
 * Commandes courantes: [https://github.com/kiou/Orani/wiki/Commandes-courantes](https://github.com/kiou/Orani/wiki/Commandes-courantes)
