@@ -12,12 +12,14 @@ Mise en place des elements de base pour le developpement d'applications web
 
 
 ## Bundles
+* Orani utilisateur: compris dans la base
+* Orani page/menu: compris dans la base
+* Orani référencement: compris dans la base
 * Orani actualités: https://github.com/kiou/Orani-actualite 
 * Orani événements: https://github.com/kiou/Orani-evenement
 * Orani contact: https://github.com/kiou/Orani-contact
 * Orani slider: https://github.com/kiou/Orani-slider
 * Orani galerie image: https://github.com/kiou/Orani-galerieimage
-* Orani galerie vidéo: à venir
 
 ## Gestion de contenu
 
