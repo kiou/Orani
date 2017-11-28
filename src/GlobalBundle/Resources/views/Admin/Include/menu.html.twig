@@ -1,4 +1,4 @@
-{% set menuUtilisateur = ['admin_user_manager', 'admin_user_ajouter', 'admin_user_modifier', 'admin_user_password'] %}
+{% set menuUtilisateur = ['admin_user_manager', 'admin_user_ajouter', 'admin_user_modifier', 'admin_user_password','admin_user_historique'] %}
 {% set menuPage = ['admin_page_manager', 'admin_page_ajouter', 'admin_page_modifier','admin_menu_manager', 'admin_menu_ajouter', 'admin_menu_modifier'] %}
 
 <nav id="menu">
@@ -17,6 +17,7 @@
     <ul id="utilisateur-menu" class="{{ getCurrentMenu(menuUtilisateur) }}">
         <li class="{{ getCurrentMenu(['admin_user_ajouter']) }}"><a href="{{ path('admin_user_ajouter')}}">Ajouter un utilisateur</a></li>
         <li class="{{ getCurrentMenu(['admin_user_manager']) }}"><a href="{{ path('admin_user_manager')}}">Gestion des utilisateurs</a></li>
+        <li class="{{ getCurrentMenu(['admin_user_historique']) }}"><a href="{{ path('admin_user_historique')}}">Gestion des historiques</a></li>
     </ul>
 
     <a href="#" data-nav="page-menu" class="menuNav {{ getCurrentMenu(menuPage) }}"> <i class="fa fa-file-text"></i> Pages <i class="fa fa-angle-right"></i></a>

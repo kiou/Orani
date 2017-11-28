@@ -13,6 +13,7 @@ use UserBundle\Form\RegisterType;
 use UserBundle\Form\UserPasswordType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use UserBundle\Entity\Historique;
 
 class UserController extends Controller
 {
@@ -20,12 +21,27 @@ class UserController extends Controller
     /**
      * Connexion
      */
-    public function LoginAction()
+    public function LoginAction(Request $request)
     {
 
         $authenticationUtils = $this->get('security.authentication_utils');
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
+
+
+        /* Historique utilisateur */
+        if(!empty($error)){
+
+            $em = $this->getDoctrine()->getManager();
+
+            $historique = new Historique;
+            $historique->setContenu('Erreur de connexion avec l\'email suivant: '.$lastUsername);
+            $historique->setIp($request->getClientIp());
+            $em->persist($historique);
+            $em->flush();
+
+
+        }
 
         return $this->render(
             'UserBundle::login.html.twig',
@@ -430,6 +446,21 @@ class UserController extends Controller
             )
         );
 
+    }
+
+    /**
+     * Gestion historique
+     */
+    public function AdminHistoriqueAction()
+    {
+        $historiques = $this->getDoctrine()
+                            ->getRepository('UserBundle:Historique')
+                            ->findBy(array(),array('id' => 'DESC'));
+
+        return $this->render( 'UserBundle:Admin:historique.html.twig', array(
+                'historiques' => $historiques
+            )
+        );
     }
 
     /**

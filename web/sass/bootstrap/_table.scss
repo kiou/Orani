@@ -29,6 +29,12 @@
 			text-align: left;
 			padding-left: 10px;
 		}
+        &.turquoise{
+            background-color: $turquoise;
+        }
+        &.rouge{
+            background-color: $rouge;
+        }
 	}
 	&.big{
 		width: 800px;

@@ -38,6 +38,10 @@ admin_user_manager:
     path: /admin/user/manager
     defaults: { _controller: UserBundle:User:AdminManager }
 
+admin_user_historique:
+    path: /admin/user/historique
+    defaults: { _controller: UserBundle:User:AdminHistorique }
+
 admin_user_ajouter:
     path: /admin/user/ajouter
     defaults: { _controller: UserBundle:User:AdminAjouter }

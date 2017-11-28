@@ -7,4 +7,4 @@ services:
 
     redirect.after.login:
         class: UserBundle\Redirection\AfterLoginRedirection
-        arguments: ['@router']
+        arguments: ['@router','@doctrine.orm.entity_manager']

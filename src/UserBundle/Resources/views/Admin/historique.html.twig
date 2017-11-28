@@ -1,0 +1,55 @@
+{% extends "GlobalBundle:Admin/Layout:layout.html.twig" %}
+
+{% block contentTitre %}Gestion des historiques{% endblock %}
+
+{% block content %}
+	<table class="table">
+		
+		<tr>
+            <th width="3%"></th>
+            <th width="1%"></th>
+            <th class="left" width="56%">Historique</th>
+            <th width="20%">Utilisateur</th>
+            <th width="20%">Ip</th>
+		</tr>
+
+		{% for historique in historiques %}
+
+			<tr>
+
+                {% if historique.utilisateur is not empty %}
+                    <td class="turquoise"></td>
+                {% else %}
+                    <td class="rouge"></td>
+                {% endif %}
+
+                <td></td>
+
+				<td class="left">
+					<p class="tableDate">Ajouté le {{ historique.created|date("d/m/Y à H:i") }}</p>
+					{% if historique.changed is not null %}
+						<p class="tableDate">Modifié le {{ historique.changed|date("d/m/Y à H:i") }}</p>
+					{% endif %}
+					<p>{{ historique.contenu }}</p>
+				</td>
+
+                <td>
+                    {% if historique.utilisateur is not empty %}
+                        <p>{{ historique.utilisateur.prenom }} {{ historique.utilisateur.nom }}</p>
+                    {% endif %}
+                </td>
+
+                <td>
+                    <p>{{ historique.ip }}</p>
+                </td>
+
+			</tr>
+
+		{% else %}
+			<tr>
+				<td colspan="5">Aucun historique</td>
+			</tr>
+		{% endfor %}
+
+	</table>
+{% endblock %}
