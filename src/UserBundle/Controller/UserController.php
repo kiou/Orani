@@ -432,4 +432,12 @@ class UserController extends Controller
 
     }
 
+    /**
+     * Compte
+     */
+    public function ClientCompteAction()
+    {
+        return $this->render('UserBundle:Compte:compte.html.twig');
+    }
+
 }

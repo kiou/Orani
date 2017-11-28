@@ -4,3 +4,7 @@ services:
         arguments: ['@doctrine.orm.entity_manager']
         tags:
             - { name: validator.constraint_validator, alias: userbyemail }
+
+    redirect.after.login:
+        class: UserBundle\Redirection\AfterLoginRedirection
+        arguments: ['@router']

@@ -26,6 +26,7 @@ security:
                 login_path: login
                 check_path: login
                 csrf_token_generator: security.csrf.token_manager
+                success_handler: redirect.after.login
             logout:
                 path:   logout
                 target: client_page_index
@@ -34,3 +35,4 @@ security:
         - { path: ^/connexion, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/inscription, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/compte, roles: [ROLE_USER, ROLE_ADMIN] }

@@ -21,42 +21,47 @@ register:
 
 #Gestion compte back office
 admin_user_compte_modifier:
-    path:     /admin/compte/modifier
+    path: /admin/compte/modifier
     defaults: { _controller: UserBundle:User:AdminCompteModifier }
 
 admin_user_compte_password:
-    path:     /admin/compte/password
+    path: /admin/compte/password
     defaults: { _controller: UserBundle:User:AdminComptePassword }
+
+#Gestion compte front office
+compte_user_manager:
+    path: /compte
+    defaults: {_controller: UserBundle:User:ClientCompte}
 
 #Gestion back office
 admin_user_manager:
-    path:     /admin/user/manager
+    path: /admin/user/manager
     defaults: { _controller: UserBundle:User:AdminManager }
 
 admin_user_ajouter:
-    path:     /admin/user/ajouter
+    path: /admin/user/ajouter
     defaults: { _controller: UserBundle:User:AdminAjouter }
 
 admin_user_publier:
-    path:     /admin/user/publier/{id}
+    path: /admin/user/publier/{id}
     defaults: { _controller: UserBundle:User:AdminPublier }
     requirements:
         id: \d+
 
 admin_user_modifier:
-    path:     /admin/user/modifier/{id}
+    path: /admin/user/modifier/{id}
     defaults: { _controller: UserBundle:User:AdminModifier }
     requirements:
         id: \d+
 
 admin_user_modifier_password:
-    path:     /admin/user/password/{id}
+    path: /admin/user/password/{id}
     defaults: { _controller: UserBundle:User:AdminModifierPassword }
     requirements:
         id: \d+
 
 admin_user_supprimer_avatar:
-    path:     /admin/user/supprimer-avatar/{id}
+    path: /admin/user/supprimer-avatar/{id}
     defaults: { _controller: UserBundle:User:AdminSupprimerAvatar }
     requirements:
         id: \d+
