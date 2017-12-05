@@ -6,14 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use UserBundle\Entity\User;
 use UserBundle\Entity\Reinitialisation;
+use UserBundle\Entity\Historique;
+use UserBundle\Entity\Newsletter;
 use UserBundle\Form\ReinitialisationType;
 use UserBundle\Form\UserType;
 use UserBundle\Form\CompteType;
 use UserBundle\Form\RegisterType;
 use UserBundle\Form\UserPasswordType;
+use UserBundle\Form\NewsletterType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use UserBundle\Entity\Historique;
 
 class UserController extends Controller
 {
@@ -44,7 +46,7 @@ class UserController extends Controller
         }
 
         return $this->render(
-            'UserBundle::login.html.twig',
+            'UserBundle:Client:login.html.twig',
             array(
                 // last username entered by the user
                 'last_username' => $lastUsername,
@@ -84,7 +86,7 @@ class UserController extends Controller
             'Inscription' => ''
         );
 
-        return $this->render( 'UserBundle::register.html.twig', array(
+        return $this->render( 'UserBundle:Client:register.html.twig', array(
                 'form' => $form->createView(),
                 'breadcrumb' => $breadcrumb
             )
@@ -137,7 +139,7 @@ class UserController extends Controller
             'Demande de réinitialisation' => ''
         );
 
-        return $this->render('UserBundle::reinitialisation.html.twig', array(
+        return $this->render('UserBundle:CLient:reinitialisation.html.twig', array(
                 'form' => $form->createView(),
                 'breadcrumb' => $breadcrumb
             )
@@ -196,7 +198,7 @@ class UserController extends Controller
             'Réinitialisation de mot de passe' => ''
         );
 
-        return $this->render('UserBundle::reinitialisation_password.html.twig', array(
+        return $this->render('UserBundle:Client:reinitialisation_password.html.twig', array(
                 'breadcrumb' => $breadcrumb,
                 'form' => $form->createView()
             )
@@ -231,7 +233,7 @@ class UserController extends Controller
             'Mes informations' => ''
         );
 
-        return $this->render( 'UserBundle:Admin:compteModifier.html.twig',
+        return $this->render( 'UserBundle:Admin/Compte:modifier.html.twig',
             array(
                 'breadcrumb' => $breadcrumb,
                 'utilisateur' => $user,
@@ -269,7 +271,7 @@ class UserController extends Controller
             'Mes informations' => ''
         );
 
-        return $this->render( 'UserBundle:Admin:comptePassword.html.twig',
+        return $this->render( 'UserBundle:Admin/Compte:modifierPassword.html.twig',
             array(
                 'breadcrumb' => $breadcrumb,
                 'form' => $form->createView()
@@ -468,7 +470,47 @@ class UserController extends Controller
      */
     public function ClientCompteAction()
     {
-        return $this->render('UserBundle:Compte:compte.html.twig');
+        return $this->render('UserBundle:Client/Compte:dashboard.html.twig');
+    }
+
+    /**
+     * Bloc newsletter
+     */
+    public function ClientNewsletterBlocAction()
+    {
+        /* Création du fomulaire */
+        $newsletter = new Newsletter;
+        $form = $this->get('form.factory')->create(NewsletterType::class, $newsletter);
+
+        return $this->render('UserBundle:Client/Newsletter:bloc.html.twig',array(
+                'form' => $form->createView()
+            )
+        );
+    }
+
+    /**
+     * Inscription newsletter
+     */
+    public function ClientNewsletterAjouterAction(Request $request)
+    {
+        /* Création du fomulaire */
+        $newsletter = new Newsletter;
+        $form = $this->get('form.factory')->create(NewsletterType::class, $newsletter);
+
+        /* Récéption du formulaire */
+        if ($form->handleRequest($request)->isValid()){
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($newsletter);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('succes', 'Vous êtes maintenant inscrit à la newsletter');
+            return $this->redirect($this->generateUrl('client_page_index'));
+        }
+
+        return $this->render('UserBundle:Client/Newsletter:ajouter.html.twig',array(
+                'form' => $form->createView()
+            )
+        );
     }
 
 }

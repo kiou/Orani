@@ -1,0 +1,13 @@
+{{ form_start(form, {'action': path('client_newsletter_ajout'), 'attr': {novalidate: 'novalidate'}}) }}
+
+    {{ form_errors(form) }}
+
+    {{ form_label(form.email, "Email *") }}
+    {{ form_errors(form.email) }}
+    {{ form_widget(form.email, {'attr': {'class': 'form-elem big'}}) }}
+
+    {{ form_widget(form.Enregistrer, { 'label': 'Inscription' }) }}
+
+    {{ form_rest(form) }}
+
+{{ form_end(form) }}

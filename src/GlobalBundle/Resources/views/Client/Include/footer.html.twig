@@ -1,0 +1,6 @@
+<footer class="footer">
+    {% if app.request.attributes.get('_route') != 'client_newsletter_ajout' %}
+        <h4>Inscription à la newsletter</h4>
+        {{ render(controller('UserBundle:User:ClientNewsletterBloc')) }}
+    {% endif %}
+</footer>

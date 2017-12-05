@@ -5,6 +5,17 @@ login:
 logout:
     path: /logout
 
+register:
+    path: /inscription
+    defaults: { _controller: UserBundle:User:Register }
+
+#Newsletter
+client_newsletter_ajout:
+    path: /inscription-newsletter
+    defaults: { _controller: UserBundle:User:ClientNewsletterAjouter }
+
+
+#Réinitialisation de mot de passe
 reinitialisation:
     path: /reinitialisation
     defaults: { _controller: UserBundle:User:Reinitialisation }
@@ -14,10 +25,6 @@ reinitialisation_password:
     defaults: { _controller: UserBundle:User:ReinitialisationPassword }
     requirements:
         token: ([a-z-0-9]*)
-
-register:
-    path: /inscription
-    defaults: { _controller: UserBundle:User:Register }
 
 #Gestion compte back office
 admin_user_compte_modifier:

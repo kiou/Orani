@@ -20,6 +20,9 @@
 
 	<main class="main">
 
+        <!-- Le header -->
+        {{ include("GlobalBundle:Client/Include:header.html.twig") }}
+
         <!-- Le menu -->
         {{ render(controller('PageBundle:Menu:managerClient')) }}
 
@@ -42,6 +45,9 @@
             {% endblock %}
 
         </div>
+
+        <!-- Le footer -->
+        {{ include("GlobalBundle:Client/Include:footer.html.twig") }}
 
 	</main>
 	
