@@ -1,13 +1,22 @@
-{{ form_start(form, {'action': path('client_newsletter_ajout'), 'attr': {novalidate: 'novalidate'}}) }}
+<div class="newsletter">
+    <div class="inner">
+        <div class="newsletterClose"><i class="fa fa-times"></i></div>
 
-    {{ form_errors(form) }}
+        <h2>Inscription à la newsletter</h2>
+        {{ form_start(form, {'action': path('client_newsletter_ajout'), 'attr': {novalidate: 'novalidate', 'id': 'newsletterForm'}}) }}
 
-    {{ form_label(form.email, "Email *") }}
-    {{ form_errors(form.email) }}
-    {{ form_widget(form.email, {'attr': {'class': 'form-elem big'}}) }}
+            {{ form_errors(form) }}
 
-    {{ form_widget(form.Enregistrer, { 'label': 'Inscription' }) }}
+            {{ form_label(form.email, "Email *") }}
+            {{ form_errors(form.email) }}
+            {{ form_widget(form.email, {'attr': {'class': 'form-elem big'}}) }}
 
-    {{ form_rest(form) }}
+            <br>
 
-{{ form_end(form) }}
+            {{ form_widget(form.Enregistrer, { 'label': 'Je m\'inscris' }) }}
+
+            {{ form_rest(form) }}
+
+        {{ form_end(form) }}
+    </div>
+</div>

@@ -4,6 +4,7 @@ namespace UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use UserBundle\Entity\User;
 use UserBundle\Entity\Reinitialisation;
 use UserBundle\Entity\Historique;
@@ -478,7 +479,7 @@ class UserController extends Controller
      */
     public function ClientNewsletterBlocAction()
     {
-        /* Création du fomulaire */
+        /* Création du fomulaire*/
         $newsletter = new Newsletter;
         $form = $this->get('form.factory')->create(NewsletterType::class, $newsletter);
 
@@ -493,24 +494,85 @@ class UserController extends Controller
      */
     public function ClientNewsletterAjouterAction(Request $request)
     {
-        /* Création du fomulaire */
-        $newsletter = new Newsletter;
-        $form = $this->get('form.factory')->create(NewsletterType::class, $newsletter);
+        if($request->isXmlHttpRequest()) {
 
-        /* Récéption du formulaire */
-        if ($form->handleRequest($request)->isValid()){
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($newsletter);
-            $em->flush();
+            /* Création du fomulaire */
+            $newsletter = new Newsletter;
+            $form = $this->get('form.factory')->create(NewsletterType::class, $newsletter);
 
-            $request->getSession()->getFlashBag()->add('succes', 'Vous êtes maintenant inscrit à la newsletter');
-            return $this->redirect($this->generateUrl('client_page_index'));
+            /* Récéption du formulaire */
+            if ($form->handleRequest($request)->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($newsletter);
+                $em->flush();
+
+                return new JsonResponse(array(
+                        'succes' => 'Votre message à été envoyé avec succès'
+                    )
+                );
+            }
+
+            return new JsonResponse(array(
+                    'error' => $this->getErrorsAsArray($form)
+                )
+            );
+
+        }
+    }
+
+    /**
+     * Export
+     */
+    public function AdminNewsletterExportAction()
+    {
+        $file = __DIR__.'/../../../web/file/export/newsletter.csv';
+
+        $fp = fopen($file,'w');
+
+        fputcsv($fp,array('Date','Email'),';');
+
+        $newsletters = $this->getDoctrine()
+                            ->getRepository('UserBundle:Newsletter')
+                            ->findBy([],['id' => 'DESC']);
+
+        foreach ($newsletters as $newsletter){
+
+            $row = array(
+                'Date' => $newsletter->getCreated()->format('d-m-Y H:i:s'),
+                'Email' => $newsletter->getEmail(),
+            );
+
+            $row = array_map("utf8_decode", $row);
+            fputcsv($fp, $row,';');
+
         }
 
-        return $this->render('UserBundle:Client/Newsletter:ajouter.html.twig',array(
-                'form' => $form->createView()
-            )
-        );
+        fclose($fp);
+
+        $response = new Response();
+        $response->headers->set('Content-type', 'text/csv');
+        $response->headers->set('Content-Disposition', 'attachment; filename="newsletter.csv";');
+        $response->sendHeaders();
+        $response->setContent(file_get_contents($file));
+        return $response;
+
+    }
+
+    /**
+     * Retourne un tableau d'erreur pour le formulaired
+     * @param Object le formulaire
+     */
+    protected function getErrorsAsArray($form)
+    {
+        $errors = array();
+        foreach ($form->getErrors() as $error)
+            $errors[] = $error->getMessage();
+
+        foreach ($form->all() as $key => $child) {
+            if ($err = $this->getErrorsAsArray($child))
+                $errors[$key] = $err;
+        }
+        return $errors;
     }
 
 }

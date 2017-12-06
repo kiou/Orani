@@ -11,9 +11,12 @@ register:
 
 #Newsletter
 client_newsletter_ajout:
-    path: /inscription-newsletter
+    path: /newsletter-inscription
     defaults: { _controller: UserBundle:User:ClientNewsletterAjouter }
 
+admin_newsletter_export:
+    path: /newsletter-export
+    defaults: { _controller: UserBundle:User:AdminNewsletterExport }
 
 #Réinitialisation de mot de passe
 reinitialisation:
