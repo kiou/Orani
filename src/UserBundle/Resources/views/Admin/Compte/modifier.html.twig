@@ -2,10 +2,6 @@
 
 {% block contentTitre %}Mes informations{% endblock %}
 
-{% block cssBefore %}
-    <link href="{{ asset('js/sweet/sweet.css')}}" rel="stylesheet" type="text/css">
-{% endblock %}
-
 {% block breadcrumb %}
 	<div id="breadcrumb">
 		{{ include("GlobalBundle:Admin/Include:breadcrumb.html.twig", {'breadcrumb':breadcrumb }) }}
@@ -55,8 +51,4 @@
 		</div>
 
 	{{ form_end(form) }}
-{% endblock %}
-
-{% block scriptBefore %}
-    <script type="text/javascript" src="{{ asset('js/sweet/sweet.js')}}"></script>
 {% endblock %}

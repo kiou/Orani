@@ -1,9 +1,5 @@
 {% extends "GlobalBundle:Admin/Layout:layout.html.twig" %}
 
-{% block cssBefore %}
-	<link href="{{ asset('js/sweet/sweet.css')}}" rel="stylesheet" type="text/css">
-{% endblock %}
-
 {% block contentTitre %}Gestion des pages{% endblock %}
 
 {% block content %}
@@ -82,8 +78,4 @@
 	    {{ knp_pagination_render(pagination) }}
 	</div>
 	
-{% endblock %}
-
-{% block scriptBefore %}
-	<script type="text/javascript" src="{{ asset('js/sweet/sweet.js')}}"></script>
 {% endblock %}

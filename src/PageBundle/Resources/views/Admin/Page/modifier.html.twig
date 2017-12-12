@@ -2,10 +2,6 @@
 
 {% block contentTitre %}Modifier une page {% endblock %}
 
-{% block cssBefore %}
-    <link href="{{ asset('js/sweet/sweet.css')}}" rel="stylesheet" type="text/css">
-{% endblock %}
-
 {% block breadcrumb %}
 	<div id="breadcrumb">
 		{{ include("GlobalBundle:Admin/Include:breadcrumb.html.twig") }}
@@ -43,12 +39,7 @@
 
 {% endblock %}
 
-{% block scriptBefore %}
-    <script type="text/javascript" src="{{ asset('js/sweet/sweet.js')}}"></script>
-{% endblock %}
-
 {% block scriptAfter %}
-    <script type="text/javascript" src="{{ asset('js/tinymce/tinymce.min.js')}}"></script>
     <script type="text/javascript">
         tinymce.init({
             selector: ".wysiwyg",
