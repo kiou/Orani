@@ -1,3 +1,40 @@
 .message{
-    margin-bottom: 20px;
+	width: 100%;
+	padding: 20px 20px 20px 35px;
+	margin-bottom: 20px;
+	background-color: $blanc;
+	position: relative;
+	h3{
+		padding-bottom: 5px;
+	}
+	&.medium{
+		width: 290px;
+	}
+	&.big{
+		width: 490px;
+	}
+	&.small{
+		width: 170px;
+	}
+	&#erreur{
+		h3{ color: $rouge; }
+		span{ background-color: $rouge; }
+	}
+	&#succes{
+		h3{ color: $vert }
+		span{ background-color: $vert; }
+	}
+	&#infos{
+		h3{ color: $grisClair }
+		span{ background-color: $grisClair; }
+	}
+}
+
+.messageCouleur{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 6px;
+	display: block;
 }

@@ -507,7 +507,7 @@ class UserController extends Controller
                 $em->flush();
 
                 return new JsonResponse(array(
-                        'succes' => 'Votre message à été envoyé avec succès'
+                        'succes' => 'Vous êtes maintenant inscrit à la newsletter'
                     )
                 );
             }
