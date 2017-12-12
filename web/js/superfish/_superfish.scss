@@ -55,7 +55,7 @@
 }
 
 .sf-menu ul li {
-	background: $gris;
+	background: #95a5a6;
 	@include transition-property(background-color);
 	@include transition-duration(0.3s);
 	@include transition-timing-function(ease);
@@ -63,7 +63,7 @@
 
 .sf-menu li:hover,
 .sf-menu li.sfHover {
-	background-color: lighten($gris,15%);
+	background-color: lighten(#95a5a6,15%);
 }
 
 .sf-arrows .sf-with-ul {

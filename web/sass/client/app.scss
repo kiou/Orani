@@ -1,20 +1,30 @@
 /* Import compass */
 @import "compass/css3";
 
-/* Font */
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,300,500,500italic,700,700italic,900,100'");
+/* Font icon */
 @import "../fontawsome/font-awesome";
 
-/* Imports pour la structure */
-@import "variable";
-@import "mixin";
-@import "reset";
-@import "global";
-@import "layout";
-@import "content";
+/**************
+Thème classique
+**************/
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,300,500,500italic,700,700italic,900,100'");
+@import "classique/variable";
+@import "classique/reset";
+@import "classique/global";
+@import "classique/layout";
+@import "classique/content";
+@import "classique/mobile";
 
-/* modules */
-@import "superfish";
+/********
+Composant
+*********/
+@import "composant/form";
+@import "composant/message";
+@import "composant/breadcrumb";
 
-/* Mobile */
-@import "mobile";
+/*****
+Module
+******/
+@import "../js/superfish/superfish";
+@import "../js/owl/owl.carousel";
+@import "../js/lightbox/lightbox";

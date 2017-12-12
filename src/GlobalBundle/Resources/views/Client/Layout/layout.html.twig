@@ -3,8 +3,8 @@
 
 <head>
 	<title>{% block metaTitle %}{% endblock %}</title>
-
 	<meta name="description" content="{% block metaDescription %}{% endblock %}">
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width; height=device-height; initial-scale=1; minimum-scale=1; maximum-scale=1">
 
@@ -29,28 +29,30 @@
         <!-- Le menu -->
         {{ render(controller('PageBundle:Menu:managerClient')) }}
 
-        <div class="contentTitle">
-            {% block contentitle %}
-            {% endblock %}
-        </div>
-
-        <!-- Breadcrumb au dessus du contenu -->
-        {% block breadcrumb %}
-        {% endblock %}
-
         <!-- Contenu principal du site -->
         <div class="content">
+            <div class="inner">
 
-            <!-- Affichage des messages en session -->
-            {{ include("GlobalBundle:Client/Include:flashbag.html.twig") }}
+                <!-- Breadcrumb au dessus du contenu -->
+                {% block breadcrumb %}
+                {% endblock %}
 
-            {% block content %}
-            {% endblock %}
+                <!-- Affichage des messages en session -->
+                {{ include("GlobalBundle:Client/Include:flashbag.html.twig") }}
 
+                {% block content %}
+                {% endblock %}
+
+                <div class="clear"></div>
+
+            </div>
         </div>
 
         <!-- Le footer -->
         {{ include("GlobalBundle:Client/Include:footer.html.twig") }}
+
+        <!-- Le pied de page -->
+        {{ include("GlobalBundle:Client/Include:bas.html.twig") }}
 
 	</main>
 	
@@ -59,8 +61,10 @@
 		<script type="text/javascript" src="{{ asset('js/client/app_min.js')}}"></script>
 	{% else %}
 		<script type="text/javascript" src="{{ asset('js/jquery/jquery.js')}}"></script>
-        <script type="text/javascript" src="{{ asset('js/superfish.js')}}"></script>
-		<script type="text/javascript" src="{{ asset('js/client/app.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/superfish/superfish.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/owl/owl.carousel.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/lightbox/lightbox.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/client/app.js')}}"></script>
 	{% endif %}
     {% block script %}{% endblock %}
 

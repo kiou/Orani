@@ -1,40 +1,42 @@
-<nav class="nav">
+<nav class="navigation">
+    <div class="inner">
 
-    {% if menus is not empty %}
+        {% if menus is not empty %}
 
-        <!-- parents -->
-        <ul class="sf-menu">
-            {% for menu in menus %}
-                <li>
-                    {{ include("PageBundle:Client/Menu:actions.html.twig",{menu:menu}) }}
-                    {% if menu.enfants is defined %}
+            <!-- parents -->
+            <ul class="sf-menu">
+                {% for menu in menus %}
+                    <li>
+                        {{ include("PageBundle:Client/Menu:actions.html.twig",{menu:menu}) }}
+                        {% if menu.enfants is defined %}
 
-                        <!-- enfants -->
-                        <ul>
-                            {% for enfant in menu.enfants %}
-                                <li>
-                                    {{ include("PageBundle:Client/Menu:actions.html.twig",{menu:enfant}) }}
-                                    {% if enfant.enfants is defined %}
+                            <!-- enfants -->
+                            <ul>
+                                {% for enfant in menu.enfants %}
+                                    <li>
+                                        {{ include("PageBundle:Client/Menu:actions.html.twig",{menu:enfant}) }}
+                                        {% if enfant.enfants is defined %}
 
-                                        <!-- enfants 2éme niveau -->
-                                        <ul>
-                                            {% for enfantenfant in enfant.enfants %}
-                                                <li>{{ include("PageBundle:Client/Menu:actions.html.twig",{menu:enfantenfant}) }}</li>
-                                            {% endfor %}
-                                        </ul><!-- Fin enfants 2éme niveau -->
+                                            <!-- enfants 2éme niveau -->
+                                            <ul>
+                                                {% for enfantenfant in enfant.enfants %}
+                                                    <li>{{ include("PageBundle:Client/Menu:actions.html.twig",{menu:enfantenfant}) }}</li>
+                                                {% endfor %}
+                                            </ul><!-- Fin enfants 2éme niveau -->
 
-                                    {% endif %}
-                                </li>
-                            {% endfor %}
-                        </ul> <!-- Fin enfants -->
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul> <!-- Fin enfants -->
 
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul> <!-- Fin parents -->
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul> <!-- Fin parents -->
 
-    {% endif %}
+        {% endif %}
 
-    <div class="clear"></div>
+        <div class="clear"></div>
 
+    </div>
 </nav>

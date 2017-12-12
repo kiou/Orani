@@ -1,0 +1,14 @@
+#breadcrumb{
+    ul{
+        list-style: none;
+        display: inline-block;
+        padding-top: 20px;
+        li{
+            display: inline-block;
+            font-size: 14px;
+            .divider{
+                padding: 0px 4px;
+            }
+        }
+    }
+}

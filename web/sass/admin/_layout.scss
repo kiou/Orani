@@ -1,5 +1,5 @@
 /* Template */
-#main{
+.main{
 	position: absolute;
 	left: 0px;
 	top: 0px;
@@ -9,7 +9,7 @@
 	-webkit-overflow-scrolling: touch;
 }
 
-#container{
+.container{
 	overflow: hidden;
 	z-index: 2;
 	position: relative;
@@ -25,12 +25,12 @@
 	}
 }
 
-#content{
+.content{
 	padding: 30px;
 	position: relative;
 }
 
-#contentTitre{
+.contentTitre{
 	width: 100%;
 	background-color: $grisBlanc;
 	padding: 20px 30px 30px 30px;
@@ -59,12 +59,12 @@
 /* Template */
 
 /* Header */
-#header{
+.header{
     @include background-image(linear-gradient(to right, $bleu, $turquoise));
 	width: 100%;
 }
 
-#headerAcces{
+.headerAcces{
 	height: 80px;
 	line-height: 80px;
 	padding-left: 30px;
@@ -82,7 +82,7 @@
 	}
 }
 
-#headerCompte{
+.headerCompte{
 	height: 80px;
 	padding: 0px 20px;
 	float: right;
@@ -111,14 +111,14 @@
 	}
 }
 
-#headerCompteMenu{
+.headerCompteMenu{
 	width: 200px;
     .fa{
         padding-right: 5px;
     }
 }
 
-#headerDeco{
+.headerDeco{
 	height: 80px;
 	line-height: 80px;
 	float: right;
@@ -133,7 +133,7 @@
 	}
 }
 
-#headerMobile{
+.headerMobile{
 	position: relative;
 	float: left;
 	height: 80px;
@@ -183,7 +183,7 @@
 /* Header */
 
 /* Menu */
-#menu {
+.menu {
 	width: 280px;
 	position: fixed;
 	z-index: 1;
@@ -198,7 +198,7 @@
 	}
 }
 
-#menuEntreprise{
+.menuEntreprise{
 	width: 100%;
     @include background-image(linear-gradient(to right, $bleu,$bleurClair));
 	text-align: center;
@@ -212,7 +212,7 @@
 	}
 }
 
-#menuLogo{
+.menuLogo{
 	width: 116px;
 	height: 116px;
 	background-color: darken($grisFonce,5%);

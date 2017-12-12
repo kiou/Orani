@@ -1,0 +1,59 @@
+/**
+Mise en page
+ */
+h1{
+    font-size: 35px;
+    color: $gris;
+    font-weight: 500;
+}
+
+h2{
+    font-size: 27px;
+    color: $gris;
+    font-weight: 500;
+}
+
+h3{
+    font-size: 20px;
+    color: $gris;
+    font-weight: 500;
+}
+
+h4{
+    font-size: 15px;
+    color: $gris;
+    font-weight: 500;
+}
+
+p{
+    font-size:14px;
+    color: $gris;
+}
+
+/**
+Wysiwyg
+ */
+.wysiwyg{
+    p{
+        margin-bottom: 20px;
+    }
+    h2{
+        margin: 10px 0px 20px 0px;
+    }
+    h3{
+        margin: 5px 0px 10px 0px;
+    }
+    ul{
+        margin: 0px 0px 20px 30px;
+        li{
+            font-size:14px;
+            color: $gris;
+        }
+    }
+
+    img{
+        max-width: 100%;
+        height:auto;
+        margin-bottom: 20px;
+    }
+}

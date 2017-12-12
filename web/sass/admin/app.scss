@@ -5,22 +5,31 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,300,500,500italic,700,700italic,900,100'");
 @import "../fontawsome/font-awesome";
 
-/* Imports pour la structure */
+/****
+Thème
+*****/
 @import "variable";
 @import "reset";
 @import "global";
 @import "layout";
 @import "content";
-
-/* Import bootstrap */
-@import "bootstrap/form";
-@import "bootstrap/message";
-@import "bootstrap/menu";
-@import "bootstrap/breadcrumb";
-@import "bootstrap/table";
-@import "bootstrap/pagination";
-@import "bootstrap/bouton";
-@import "bootstrap/datepicker";
-
-/* Mobile */
 @import "mobile";
+
+/********
+Composant
+*********/
+@import "admin/composant/form";
+@import "admin/composant/message";
+@import "admin/composant/menu";
+@import "admin/composant/breadcrumb";
+@import "admin/composant/table";
+@import "admin/composant/pagination";
+@import "admin/composant/bouton";
+@import "admin/composant/datepicker";
+
+/*****
+Module
+******/
+@import "../js/scroll/scroll";
+@import "../js/sweet/sweet";
+

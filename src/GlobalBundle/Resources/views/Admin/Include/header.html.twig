@@ -1,21 +1,21 @@
-<header id="header">
+<header class="header">
 
-	<div id="headerMobile">
+	<div class="headerMobile">
 		<span></span>
 	</div>
 
-	<a href="{{ path('client_page_index') }}"  title="Accéder au site" target="_blank" id="headerAcces">
+	<a href="{{ path('client_page_index') }}"  title="Accéder au site" target="_blank" class="headerAcces">
 		<i class="fa fa-desktop"></i> Afficher mon site
 	</a>
 
-	<a href="{{ path('logout') }}" title="Déconnexion" id="headerDeco">
+	<a href="{{ path('logout') }}" title="Déconnexion" class="headerDeco">
 		<i class="fa fa-power-off"></i>
 	</a>
 
-	<div id="headerCompte" class="dropDown">
+	<div class="headerCompte dropDown">
 		<p>{{ app.user.nom|first|capitalize }}.{{ app.user.prenom|capitalize }} <i class="fa fa-angle-right"></i></p>
 
-		<div id="headerCompteMenu" class="dropDownMenu shadow">
+		<div class="headerCompteMenu dropDownMenu shadow">
 			<ul>
                 <li><a href="{{ path('admin_user_compte_modifier')}}"><i class="fa fa-user"></i> Mes informations</a></li>
                 <li><a href="{{ path('admin_user_compte_password')}}"><i class="fa fa-unlock-alt"></i> Mon mot de passe</a></li>

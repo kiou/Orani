@@ -1,19 +1,19 @@
 @media screen and (max-width: 1200px) {
 
-	#headerMobile{
+	.headerMobile{
 		display: block;
 	}
 
-	#menu {
+	.menu {
 		@include transform(translateX(-180px));
 	}
 
-	#container{
+	.container{
 		@include transform(translateX(0px));
 		width: 100%;
 	}
 
-    #headerAcces{
+    .headerAcces{
         padding-left: 10px;
     }
 

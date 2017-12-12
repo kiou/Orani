@@ -8,6 +8,9 @@ module.exports = function(grunt){
 			dist: {
 				src: [
 					'web/js/jquery/jquery.js',
+                    'web/js/superfish/superfish.js',
+                    'web/js/owl/owl.carousel.min.js',
+                    'web/js/lightbox/lightbox.js',
 					'web/js/client/app.js',
 				],
 				dest: 'web/js/client/app_min.js',
