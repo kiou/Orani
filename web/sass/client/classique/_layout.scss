@@ -45,8 +45,10 @@
 }
 
 .header{
-    padding:10px 0px;
-    background-color: $grisClair;
+    .inner{
+        padding:20px;
+        background-color: $grisClair;
+    }
 }
 
 .headerLogo{
