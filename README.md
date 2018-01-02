@@ -49,6 +49,10 @@ Mise en place des elements de base pour le developpement d'applications web
 * php bin/console doctrine:fixtures:load
 - parametres > app
 
+## Multilangue
+
+* Dans le fichier config.yml modifier le paramétre multilangue
+* Mettre à jour le prefix de route dans le fichier racine route.yml
 
 ## Compte
 Pour l'administration
