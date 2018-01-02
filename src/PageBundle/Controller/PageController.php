@@ -46,14 +46,15 @@ class PageController extends Controller
         /* Services */
         $rechercheService = $this->get('recherche.service');
         $recherches = $rechercheService->setRecherche('page_manager', array(
-                'recherche'
+                'recherche',
+                'langue'
             )
         );
 
         /* La liste des pages */
         $pages = $this->getDoctrine()
                       ->getRepository('PageBundle:Page')
-                      ->getAllPages($recherches['recherche']);
+                      ->getAllPages($recherches['recherche'], $recherches['langue']);
 
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -62,9 +63,13 @@ class PageController extends Controller
             50/*limit per page*/
         );
 
+        /* La liste des langues */
+        $langues = $this->getDoctrine()->getRepository('GlobalBundle:Langue')->findAll();
+
         return $this->render( 'PageBundle:Admin/Page:manager.html.twig', array(
                 'pagination' => $pagination,
-                'recherches' => $recherches
+                'recherches' => $recherches,
+                'langues' => $langues
             )
         );
 

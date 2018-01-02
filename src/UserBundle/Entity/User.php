@@ -16,8 +16,8 @@ use GlobalBundle\Service\Upload;
  *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\UserRepository")
- * @UniqueEntity(fields="email", message="Un utilisateur avec cet email existe déjà.")
- * @UniqueEntity(fields="username", message="Une utilisateur avec cet username existe déjà.")
+ * @UniqueEntity(fields="email", message="user.validators.uniqueemail")
+ * @UniqueEntity(fields="username", message="user.validators.uniquepseudonyme")
  * @ORM\HasLifecycleCallbacks
  */
 class User implements AdvancedUserInterface, \Serializable
@@ -49,7 +49,7 @@ class User implements AdvancedUserInterface, \Serializable
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=255, unique=true)
-     * @Assert\NotBlank(message="Compléter le champ pseudonyme")
+     * @Assert\NotBlank(message="user.validators.pseudonyme")
      */
     private $username;
 
@@ -57,7 +57,7 @@ class User implements AdvancedUserInterface, \Serializable
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
-     * @Assert\NotBlank(message="Compléter le champ nom")
+     * @Assert\NotBlank(message="user.validators.nom")
      */
     private $nom;
 
@@ -65,7 +65,7 @@ class User implements AdvancedUserInterface, \Serializable
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=255)
-     * @Assert\NotBlank(message="Compléter le champ prénom")
+     * @Assert\NotBlank(message="user.validators.prenom")
      */
     private $prenom;
 
@@ -73,7 +73,7 @@ class User implements AdvancedUserInterface, \Serializable
      * @var string
      *
      * @ORM\Column(name="password", type="string", length=64)
-     * @Assert\NotBlank(message="Compléter le champ mot de passe")
+     * @Assert\NotBlank(message="user.validators.password")
      */
     private $password;
 
@@ -81,8 +81,8 @@ class User implements AdvancedUserInterface, \Serializable
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
-     * @Assert\NotBlank(message="Compléter le champ email")
-     * @Assert\Email(message="Le format de l'email n'est pas bon ex : xyz@exemple.fr")
+     * @Assert\NotBlank(message="user.validators.email")
+     * @Assert\Email(message="user.validators.emailvalide")
      */
     private $email;
 
@@ -97,7 +97,7 @@ class User implements AdvancedUserInterface, \Serializable
      * @var array
      *
      * @ORM\Column(name="roles", type="array")
-     * @Assert\NotBlank(message="Vous devez choisir au moins un rôle")
+     * @Assert\NotBlank(message="user.validators.rolemin")
      */
     private $roles = array();
 

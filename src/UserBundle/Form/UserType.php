@@ -40,10 +40,10 @@ class UserType extends AbstractType
             ->add('file', FileType::class)
             ->add('password', RepeatedType::class, array(
                     'type' => PasswordType::class,
-                    'invalid_message' => 'Le mot de passe ne correspond pas',
+                    'invalid_message' => 'user.validators.passwordconfirm',
                     'options' => array('attr' => array('class' => 'form-elem big')),
-                    'first_options' => array('label' => 'Mot de passe *'),
-                    'second_options' => array('label' => 'Confirmation *')
+                    'first_options' => array('label' => 'user.label.password'),
+                    'second_options' => array('label' => 'user.label.passwordconfirmation')
                 )
             )
             ->add('Enregistrer', SubmitType::class, array(

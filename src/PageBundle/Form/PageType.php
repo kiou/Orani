@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use GlobalBundle\Form\Type\LangueType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use ReferencementBundle\Form\ReferencementType;
 
@@ -21,6 +22,7 @@ class PageType extends AbstractType
                 ->add('slug', TextType::class)
                 ->add('contenu', TextareaType::class)
                 ->add('referencement', ReferencementType::class)
+                ->add('langue', LangueType::class)
                 ->add('Enregistrer', SubmitType::class, array(
                         'attr' => array('class' => 'form-submit turquoise medium')
                     )

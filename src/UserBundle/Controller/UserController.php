@@ -99,6 +99,7 @@ class UserController extends Controller
      */
     public function ReinitialisationAction(Request $request)
     {
+        $translator = $this->get('translator');
         $base_url = $request->getScheme() . '://' . $request->getHttpHost();
 
         $reinitialisation = new Reinitialisation;
@@ -115,13 +116,13 @@ class UserController extends Controller
 
             /* Notification*/
             $message = \Swift_Message::newInstance()
-                ->setSubject('Réinitialisation de mot de passe')
+                ->setSubject($translator->trans('reinitialisation.mail.title'))
                 ->setFrom('contact@colocarts.com')
                 ->setTo($form->getData()->getEmail())
                 ->setBody(
                     $this->renderView('GlobalBundle:Mail:simple.html.twig', array(
-                            'titre' => 'Réinitialisation de mot de passe',
-                            'contenu' => 'Votre demande de réinitialisation à bien été prise en compte. Pour compléter le processus veuillez cliquer sur le lien suivant :<br><a href="'.$base_url.$this->generateUrl('reinitialisation_password',['token' => $token]).'">Réinitialiser mon mot de passe</a>'
+                            'titre' => $translator->trans('reinitialisation.mail.title'),
+                            'contenu' => $translator->trans('reinitialisation.mail.content').' <a href="'.$base_url.$this->generateUrl('reinitialisation_password',['token' => $token]).'">'.$translator->trans('reinitialisation.mail.link').'</a>'
                         )
                     ),
                     'text/html'
@@ -130,14 +131,14 @@ class UserController extends Controller
             /* Envoyer le message */
             $this->get('mailer')->send($message);
 
-            $request->getSession()->getFlashBag()->add('succes', 'Demande de réinitialisation effectuée avec succès. Veuillez consulter vos emails pour compléter le processus');
+            $request->getSession()->getFlashBag()->add('succes', $translator->trans('reinitialisation.validators.succes'));
             return $this->redirect($this->generateUrl('login'));
         }
 
         /* BreadCrumb */
         $breadcrumb = array(
-            'Connexion' => $this->generateUrl('login'),
-            'Demande de réinitialisation' => ''
+            $translator->trans('reinitialisation.breadcrumb.niveau1') => $this->generateUrl('login'),
+            $translator->trans('reinitialisation.breadcrumb.niveau2') => ''
         );
 
         return $this->render('UserBundle:CLient:reinitialisation.html.twig', array(
@@ -152,6 +153,8 @@ class UserController extends Controller
      */
     public function ReinitialisationPasswordAction(Request $request, $token)
     {
+
+        $translator = $this->get('translator');
 
         $reinitialisation = $this->getDoctrine()
                                  ->getRepository('UserBundle:Reinitialisation')
@@ -189,14 +192,14 @@ class UserController extends Controller
                 $em->flush();
             }
 
-            $request->getSession()->getFlashBag()->add('succes', 'Mot de passe réinitialisé avec succès, vous pouvez maintenant vous connecter avec votre nouveau mot de passe');
+            $request->getSession()->getFlashBag()->add('succes', $translator->trans('reinitialisationpassword.validators.succes'));
             return $this->redirect($this->generateUrl('login'));
         }
 
         /* BreadCrumb */
         $breadcrumb = array(
-            'Connexion' => $this->generateUrl('login'),
-            'Réinitialisation de mot de passe' => ''
+            $translator->trans('reinitialisationpassword.breadcrumb.niveau1') => $this->generateUrl('login'),
+            $translator->trans('reinitialisationpassword.breadcrumb.niveau2') => ''
         );
 
         return $this->render('UserBundle:Client:reinitialisation_password.html.twig', array(
@@ -507,7 +510,7 @@ class UserController extends Controller
                 $em->flush();
 
                 return new JsonResponse(array(
-                        'succes' => 'Vous êtes maintenant inscrit à la newsletter'
+                        'succes' => $this->get('translator')->trans('newsletter.client.validators.succes')
                     )
                 );
             }
@@ -529,7 +532,7 @@ class UserController extends Controller
 
         $fp = fopen($file,'w');
 
-        fputcsv($fp,array('Date','Email'),';');
+        fputcsv($fp,array('Date','Email','Langue'),';');
 
         $newsletters = $this->getDoctrine()
                             ->getRepository('UserBundle:Newsletter')
@@ -540,6 +543,7 @@ class UserController extends Controller
             $row = array(
                 'Date' => $newsletter->getCreated()->format('d-m-Y H:i:s'),
                 'Email' => $newsletter->getEmail(),
+                'Langue' => $newsletter->getLangue()
             );
 
             $row = array_map("utf8_decode", $row);

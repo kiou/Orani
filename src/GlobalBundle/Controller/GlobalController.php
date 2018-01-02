@@ -22,4 +22,17 @@ class GlobalController extends Controller
         return $this->render('GlobalBundle:Admin/Page:index.html.twig');
     }
 
+    /**
+     * Selecteur de langue
+     */
+    public function SelecteurLangueAction()
+    {
+        $langues = $this->getDoctrine()->getRepository('GlobalBundle:Langue')->findAll();
+
+        return $this->render('GlobalBundle:Langue:selecteur.html.twig',array(
+                'langues' => $langues
+            )
+        );
+    }
+
 }

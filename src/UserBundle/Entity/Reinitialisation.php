@@ -13,7 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  *
  * @ORM\Table(name="user_reinitialisation")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\ReinitialisationRepository")
- * @UniqueEntity(fields="token", message="Erreur token")
+ * @UniqueEntity(fields="token", message="reinitialisation.validators.token")
  * @ORM\HasLifecycleCallbacks
  */
 class Reinitialisation

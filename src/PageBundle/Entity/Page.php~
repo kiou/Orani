@@ -84,6 +84,11 @@ class Page
      */
     private $referencement;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="GlobalBundle\Entity\Langue")
+     */
+    private $langue;
+
     public function __construct()
     {
         $this->isActive = true;
@@ -190,7 +195,8 @@ class Page
      */
     public function setSlug($slug)
     {
-        $this->slug = $slug;
+        $slugify = new Slugify();
+        $this->slug = $slugify->slugify($slug);
 
         return $this;
     }

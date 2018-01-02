@@ -11,7 +11,7 @@ namespace PageBundle\Repository;
 class MenuRepository extends \Doctrine\ORM\EntityRepository
 {
 
-    public function getAllMenuAdmin($parent = null, $admin)
+    public function getAllMenuAdmin($parent = null, $langue, $admin)
     {
 
         /* Requéte */
@@ -22,6 +22,14 @@ class MenuRepository extends \Doctrine\ORM\EntityRepository
         }else{
             $qb->andWhere('m.parent = :parent')
                 ->setParameter('parent', $parent);
+        }
+
+        /**
+         * recherche via la langue
+         */
+        if(!empty($langue)){
+            $qb->andWhere('m.langue = :langue')
+               ->setParameter('langue', $langue);
         }
 
         if(!$admin){

@@ -1,5 +1,10 @@
 $(function(){
 
+    /* Changement de langue */
+    $('.headerSelecteur select').on('change',function(){
+        top.location.href = $(this).val();
+    });
+
     /* Menu déroulant */
     $('ul.sf-menu').superfish();
 

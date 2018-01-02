@@ -44,16 +44,14 @@ class Referencement
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255)
-     * @Assert\NotBlank(message="Compléter le champ Meta title")
+     * @ORM\Column(name="title", type="string", length=255, nullable=true)
      */
     private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
-     * @Assert\NotBlank(message="Compléter le champ Meta description")
+     * @ORM\Column(name="description", type="string", length=255, nullable=true)
      */
     private $description;
 
@@ -337,7 +335,7 @@ class Referencement
 
         /* Miniature */
         $imagine = new Imagine();
-        $size = new Box(300,300);
+        $size = new Box(200,200);
         $imagine->open($this->fileogimage)
             ->thumbnail($size, 'outbound')
             ->save($this->getUploadRootDir().'og/'.$this->ogimage);

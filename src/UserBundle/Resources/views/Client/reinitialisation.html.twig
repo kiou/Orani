@@ -1,6 +1,6 @@
 {% extends "GlobalBundle:Client/Layout:layout.html.twig" %}
 
-{% block metaTitle %}Demande de réinitialisation{% endblock %}
+{% block metaTitle %}{{ 'reinitialisation.metatitle'|trans }}{% endblock %}
 
 {% block breadcrumb %}
     <div id="breadcrumb">
@@ -14,11 +14,11 @@
 
         {{ form_errors(form) }}
 
-        {{ form_label(form.email, "Email *") }}
+        {{ form_label(form.email, 'user.label.email'|trans ) }}
         {{ form_errors(form.email) }}
         {{ form_widget(form.email, {'attr': {'class': 'form-elem big'}}) }}<br>
 
-        {{ form_widget(form.Enregistrer, { 'label': 'Envoyer ma demande' }) }}
+        {{ form_widget(form.Enregistrer, { 'label': 'reinitialisation.label.submit'|trans }) }}
 
         {{ form_rest(form) }}
 

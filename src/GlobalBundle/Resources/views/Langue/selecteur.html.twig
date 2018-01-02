@@ -1,0 +1,11 @@
+<div class="headerSelecteur">
+    <select name="selecteurLangue">
+        {% for langue in langues %}
+            {% if app.request.locale == langue.code %}
+                <option value="{{ path('client_page_index',{'_locale':langue.code}) }}" selected>{{ langue.nom }}</option>
+            {% else %}
+                <option value="{{ path('client_page_index',{'_locale':langue.code}) }}">{{ langue.nom }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+</div>

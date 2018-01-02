@@ -22,3 +22,9 @@ services:
 
     agenda.service:
         class: GlobalBundle\Service\Agenda
+
+    langue.form.service:
+        class: GlobalBundle\Form\Type\LangueType
+        arguments: ["@doctrine.orm.entity_manager"]
+        tags:
+            - { name: form.type }

@@ -1,5 +1,5 @@
 form{
-	ul{
+	ul:not(.tabsMenu){
 		width: 500px;
 		padding: 8px 5px 8px 20px;
 		background-color: $blanc;

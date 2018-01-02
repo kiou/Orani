@@ -1,6 +1,4 @@
-<div class="form-bloc">
-    <h3>Référencement</h3>
-
+<div class="tabsContent" id="tabs-1">
     {{ form_label(form.referencement.title, "Meta title *") }}
     {{ form_errors(form.referencement.title) }}
     {{ form_widget(form.referencement.title, {'attr': {'class': 'form-elem big'}}) }}
@@ -10,9 +8,7 @@
     {{ form_widget(form.referencement.description, {'attr': {'class': 'form-elem big'}}) }}
 </div>
 
-<div class="form-bloc">
-    <h3>Référencement réseaux sociaux </h3>
-
+<div class="tabsContent" id="tabs-2">
     {{ form_label(form.referencement.ogtitle, "og:title") }}
     {{ form_errors(form.referencement.ogtitle) }}
     {{ form_widget(form.referencement.ogtitle, {'attr': {'class': 'form-elem big'}}) }}

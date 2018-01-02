@@ -80,6 +80,14 @@ class Menu
      */
     private $poid;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="langue", type="string", length=8)
+     * @Assert\NotBlank(message="Compléter le champ langue")
+     */
+    private $langue;
+
     public function __construct()
     {
         $this->isActive = true;
@@ -318,5 +326,21 @@ class Menu
     public function getLien()
     {
         return $this->lien;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLangue()
+    {
+        return $this->langue;
+    }
+
+    /**
+     * @param mixed $langue
+     */
+    public function setLangue($langue)
+    {
+        $this->langue = $langue;
     }
 }

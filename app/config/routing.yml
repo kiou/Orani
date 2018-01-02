@@ -1,15 +1,30 @@
 referencement:
     resource: "@ReferencementBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
+    requirements:
+      _locale: en|fr
 
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
+    requirements:
+      _locale: en|fr
 
 global:
     resource: "@GlobalBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
+    requirements:
+      _locale: en|fr
 
 page:
     resource: "@PageBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
+    requirements:
+      _locale: en|fr
+
+redirect_rules_nolocal:
+    path:  /
+    defaults:
+        _controller : FrameworkBundle:Redirect:urlRedirect
+        path: /fr/
+        permanent: true

@@ -34,6 +34,20 @@
 
         <br>
 
+        <div class="tabs">
+            <ul class="tabsMenu">
+                <li><a href="#tabs-1">Langue *</a></li>
+            </ul>
+
+            <div class="tabsContent" id="tabs-1">
+                {{ form_label(form.langue, "Langue *") }}
+                {{ form_errors(form.langue) }}
+                {{ form_widget(form.langue, {'attr': {'class': 'form-elem big'}}) }}
+            </div>
+        </div>
+
+        <br>
+
         {{ form_rest(form) }}
 
     {{ form_end(form) }}

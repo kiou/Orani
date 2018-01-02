@@ -1,0 +1,32 @@
+.ui-tabs{
+    width: 100%;
+}
+
+.tabsMenu{
+    width: 100%;
+    list-style: none;
+    background-color: $blanc;
+    li{
+        display: inline-block;
+        &.ui-tabs-active{
+            a{
+                background-color: $grisBlanc;
+            }
+        }
+        a{
+            display: block;
+            padding:20px;
+            width: 100%;
+        }
+    }
+}
+
+.tabsContent{
+    width: 100%;
+    padding:30px 30px 10px 30px;
+    background-color: $grisBlanc;
+    h3{
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+}

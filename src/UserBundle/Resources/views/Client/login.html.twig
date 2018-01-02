@@ -1,6 +1,6 @@
 {% extends "GlobalBundle:Client/Layout:layout.html.twig" %}
 
-{% block metaTitle %}Connexion{% endblock %}
+{% block metaTitle %}{{ 'connexion.metatitle'|trans }}{% endblock %}
 
 {% block content %}
     {% if error %}
@@ -8,10 +8,10 @@
     {% endif %}
 
     <form action="{{ path('login') }}" method="post">
-        <label for="username">Email *</label>
+        <label for="username">{{ 'user.label.email'|trans }}</label>
         <input type="text" class="form-elem big" name="_username" value="{{ last_username }}">
 
-        <label for="password">Mot de passe *</label>
+        <label for="password">{{ 'user.label.password'|trans }}</label>
         <input type="password" class="form-elem big" name="_password">
 
         <input type="hidden" name="_target_path" value="admin_page_index">
@@ -19,11 +19,11 @@
 
         <br>
 
-        <button type="submit">Se connecter</button>
+        <button type="submit">{{ 'connexion.label.submit'|trans }}</button>
     </form>
 
     <br><p>
-        Vous n'avez pas de compte ? <a href="{{ path('register') }}">Inscrivez vous</a><br>
-        Vous avez oublié votre mot de passe ? <a href="{{ path('reinitialisation') }}">Réinitialisation</a>
+        {{ 'user.links.inscription'|trans }} <a href="{{ path('register') }}">{{ 'user.links.inscriptionlink'|trans }}</a><br>
+        {{ 'user.links.reinitialisation'|trans }} <a href="{{ path('reinitialisation') }}">{{ 'user.links.reinitialisationlink'|trans }}</a>
     </p>
 {% endblock %}

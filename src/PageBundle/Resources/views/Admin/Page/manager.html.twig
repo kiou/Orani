@@ -3,8 +3,20 @@
 {% block contentTitre %}Gestion des pages{% endblock %}
 
 {% block content %}
+
 	<div id="recherche">
 		<form action="{{ path('admin_page_manager') }}" method="post">
+            <select name="langue" class="form-elem medium">
+                <option value="">Choisir une langue</option>
+                {% for langue in langues %}
+                    {% if recherches.langue == langue.code %}
+                        <option value="{{ langue.code }}" selected>{{ langue.nom }}</option>
+                    {% else %}
+                        <option value="{{ langue.code }}">{{ langue.nom }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            
 			<input type="text" name="recherche" class="form-elem medium" value="{{ recherches.recherche | default('') }}">
 
 			<button type="submit" name="addRecherche"><i class="fa fa-search"></i></button>

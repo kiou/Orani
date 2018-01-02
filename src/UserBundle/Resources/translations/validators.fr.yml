@@ -1,0 +1,22 @@
+newsletter:
+    validators:
+        uniqueemail: Vous êtes déjà inscrit à la newsletter
+
+
+user:
+    validators:
+        email: Compléter le champ email
+        emailvalide: "Le format de l'email n'est pas bon ex : xyz@exemple.fr"
+        pseudonyme: Compléter le champ pseudonyme
+        nom: Compléter le champ nom
+        prenom: Compléter le champ prénom
+        password: Compléter le champ mot de passe
+        passwordconfirm: Le mot de passe ne correspond pas
+        rolemin: Vous devez choisir au moins un rôle
+        uniqueemail: Un utilisateur avec cet email existe déjà
+        uniquepseudonyme: Une utilisateur avec cet username existe déjà
+
+reinitialisation:
+    validators:
+        token: Erreur token
+        verifuser: "Cet utilisateur n'existe pas"

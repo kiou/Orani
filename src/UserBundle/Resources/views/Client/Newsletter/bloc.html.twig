@@ -2,18 +2,20 @@
     <div class="inner">
         <div class="newsletterClose"><i class="fa fa-times"></i></div>
 
-        <h2>Inscription à notre<br>newsletter</h2>
+        <h2>{{ 'newsletter.client.bloctitre'|trans|raw }}</h2>
         {{ form_start(form, {'action': path('client_newsletter_ajout'), 'attr': {novalidate: 'novalidate', 'id': 'newsletterForm'}}) }}
 
             {{ form_errors(form) }}
 
-            {{ form_label(form.email, "Email *") }}
+            {{ form_label(form.email, 'newsletter.client.bloclabel.email'|trans) }}
             {{ form_errors(form.email) }}
             {{ form_widget(form.email, {'attr': {'class': 'form-elem'}}) }}
 
+            {{ form_widget(form.langue, {'value': app.request.locale}) }}
+
             <br>
 
-            {{ form_widget(form.Enregistrer, { 'label': 'Je m\'inscris' }) }}
+            {{ form_widget(form.Enregistrer, { 'label': 'newsletter.client.bloclabel.submit'|trans }) }}
 
             {{ form_rest(form) }}
 

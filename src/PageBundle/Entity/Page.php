@@ -84,6 +84,14 @@ class Page
      */
     private $referencement;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="langue", type="string", length=8)
+     * @Assert\NotBlank(message="Compléter le champ langue")
+     */
+    private $langue;
+
     public function __construct()
     {
         $this->isActive = true;
@@ -312,4 +320,21 @@ class Page
     {
         return $this->referencement;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getLangue()
+    {
+        return $this->langue;
+    }
+
+    /**
+     * @param mixed $langue
+     */
+    public function setLangue($langue)
+    {
+        $this->langue = $langue;
+    }
+
 }

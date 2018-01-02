@@ -32,7 +32,7 @@ security:
                 target: client_page_index
 
     access_control:
-        - { path: ^/connexion, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/inscription, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/compte, roles: [ROLE_USER, ROLE_ADMIN] }
+        - { path: ^/(en|fr)/connexion, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(en|fr)/inscription, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(en|fr)/admin, roles: ROLE_ADMIN }
+        - { path: ^/(en|fr)/compte, roles: [ROLE_USER, ROLE_ADMIN] }

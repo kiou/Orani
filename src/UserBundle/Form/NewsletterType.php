@@ -6,10 +6,12 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class NewsletterType extends AbstractType
 {
+
     /**
      * {@inheritdoc}
      */
@@ -17,6 +19,7 @@ class NewsletterType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class)
+            ->add('langue', HiddenType::class)
             ->add('Enregistrer', SubmitType::class, array(
                     'attr' => array('class' => 'form-submit turquoise medium')
                 )

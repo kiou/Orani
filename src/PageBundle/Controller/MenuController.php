@@ -108,8 +108,20 @@ class MenuController extends Controller
      */
     public function managerAdminAction()
     {
+        /* Services */
+        $rechercheService = $this->get('recherche.service');
+        $recherches = $rechercheService->setRecherche('menu_manager', array(
+                'langue'
+            )
+        );
+
+        /* La liste des langues */
+        $langues = $this->getDoctrine()->getRepository('GlobalBundle:Langue')->findAll();
+
         return $this->render('PageBundle:Admin/Menu:manager.html.twig', array(
-                'menus' => $this->getRecursiveMenu(3, null, true)
+                'menus' => $this->getRecursiveMenu(3, null, $recherches['langue'], true),
+                'recherches' => $recherches,
+                'langues' => $langues
             )
         );
     }
@@ -117,10 +129,10 @@ class MenuController extends Controller
     /**
      * Gestion client
      */
-    public function managerClientAction()
+    public function managerClientAction(Request $request)
     {
         return $this->render('PageBundle:Client/Menu:manager.html.twig', array(
-                'menus' => $this->getRecursiveMenu(3, null, false)
+                'menus' => $this->getRecursiveMenu(3, null, $request->getLocale(), false)
             )
         );
     }
@@ -155,7 +167,7 @@ class MenuController extends Controller
     /**
      * Créer le menu sous forme de tableau récursif
      */
-    public function getRecursiveMenu($recursive ,$parent, $admin){
+    public function getRecursiveMenu($recursive ,$parent, $langue, $admin){
 
         $recursive --;
 
@@ -163,7 +175,7 @@ class MenuController extends Controller
 
             $menus = $this->getDoctrine()
                           ->getRepository('PageBundle:Menu')
-                          ->getAllMenuAdmin($parent, $admin);
+                          ->getAllMenuAdmin($parent, $langue, $admin);
 
             foreach ($menus as $menu) {
 
@@ -174,6 +186,7 @@ class MenuController extends Controller
                     'parent' => $menu->getParent(),
                     'isActive' => $menu->getIsActive(),
                     'destination' => $menu->getDestination(),
+                    'langue' => $menu->getLangue()
                 );
 
                 if(empty($menu->getParent())){
@@ -190,7 +203,7 @@ class MenuController extends Controller
                     }
                 }
 
-                $this->getRecursiveMenu($recursive, $menu->getId(), $admin);
+                $this->getRecursiveMenu($recursive, $menu->getId(), $langue, $admin);
 
             }
 

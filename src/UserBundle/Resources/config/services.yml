@@ -1,7 +1,7 @@
 services:
     validator.userbyemail:
         class: UserBundle\Validator\UserByEmailValidator
-        arguments: ['@doctrine.orm.entity_manager']
+        arguments: ['@doctrine.orm.entity_manager', '@translator']
         tags:
             - { name: validator.constraint_validator, alias: userbyemail }
 

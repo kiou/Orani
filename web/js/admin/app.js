@@ -1,5 +1,11 @@
 $(function(){
 
+    /* onglet vertical */
+    $('.tabs').tabs({
+        collapsible: true,
+        history: true
+    });
+
     /* Tooltip */
     $(document).tooltip({
         track: true

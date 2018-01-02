@@ -1,0 +1,61 @@
+newsletter:
+    client:
+        bloctitre: Inscription à notre<br>newsletter
+        bloclabel:
+            email: Email *
+            submit: Je m'inscris
+        validators:
+            succes: Vous êtes maintenant inscrit à la newsletter
+
+connexion:
+    metatitle: Connexion
+    label:
+        submit: Se connecter
+
+inscription:
+    metatitle: Inscription
+    label:
+        submit: "S'inscrire"
+
+user:
+    label:
+        pseudonyme: Pseudonyme *
+        nom: Nom *
+        prenom: Prénom *
+        avatar: Avatar
+        email: Email *
+        password: Mot de passe *
+        passwordconfirmation: Confirmation *
+    legende:
+        avatar: "L'image doit faire exactement 150px par 150px<br>Le format doit être (jpg, png)<br>Le poid ne doit pas dépacer 1Mo"
+    links:
+        inscription: "Vous n'avez pas de compte ?"
+        inscriptionlink: Inscrivez vous
+        reinitialisation: Vous avez oublié votre mot de passe ?
+        reinitialisationlink: Réinitialisation
+        connexion: Vous êtes déjà inscrit ?
+        connexionlink: Connectez vous
+
+reinitialisation:
+    metatitle: Demande de réinitialisation
+    label:
+        submit: Envoyer ma demande
+    validators:
+        succes: Demande de réinitialisation effectuée avec succès. Veuillez consulter vos emails pour compléter le processus
+    breadcrumb:
+        niveau1: Connexion
+        niveau2: Demande de réinitialisation
+    mail:
+        title: Réinitialisation de mot de passe
+        content: Votre demande de réinitialisation à bien été prise en compte. Pour compléter le processus veuillez cliquer sur le lien suivant :
+        link: Réinitialisation mon mot de passe
+
+reinitialisationpassword:
+    metatitle: Réinitialisation de mot de passe
+    label:
+        submit: Réinitialiser
+    validators:
+        succes: Mot de passe réinitialisé avec succès, vous pouvez maintenant vous connecter avec votre nouveau mot de passe
+    breadcrumb:
+        niveau1: Connexion
+        niveau2: Réinitialisation de mot de passe

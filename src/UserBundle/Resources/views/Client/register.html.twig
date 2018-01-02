@@ -1,6 +1,6 @@
 {% extends "GlobalBundle:Client/Layout:layout.html.twig" %}
 
-{% block metaTitle %}Inscription{% endblock %}
+{% block metaTitle %}{{ 'inscription.metatitle'|trans }}{% endblock %}
 
 {% block content %}
 
@@ -8,38 +8,38 @@
 
 		{{ form_errors(form) }}
 		
-		{{ form_label(form.username, "Pseudonyme *") }}
+		{{ form_label(form.username, 'user.label.pseudonyme'|trans ) }}
 		{{ form_errors(form.username) }}
 		{{ form_widget(form.username, {'attr': {'class': 'form-elem big'}}) }}<br>
 
-        {{ form_label(form.nom, "Nom *") }}
+        {{ form_label(form.nom, 'user.label.nom'|trans ) }}
         {{ form_errors(form.nom) }}
         {{ form_widget(form.nom, {'attr': {'class': 'form-elem big'}}) }}<br>
 
-        {{ form_label(form.prenom, "Prénom *") }}
+        {{ form_label(form.prenom, 'user.label.prenom'|trans ) }}
         {{ form_errors(form.prenom) }}
         {{ form_widget(form.prenom, {'attr': {'class': 'form-elem big'}}) }}<br>
 
-		{{ form_label(form.email, "Email *") }}
+		{{ form_label(form.email, 'user.label.email'|trans ) }}
 		{{ form_errors(form.email) }}
 		{{ form_widget(form.email, {'attr': {'class': 'form-elem big'}}) }}<br>
 
-		{{ form_label(form.file, "Avatar") }}
+		{{ form_label(form.file, 'user.label.avatar'|trans ) }}
 		{{ form_errors(form.file) }}
 		{{ form_widget(form.file, {'attr': {'class': 'form-elem big'}}) }}
 		<div class="form-legende">
-			<p>L'image doit faire exactement 150px par 150px<br>Le format doit être (jpg, png)<br>Le poid ne doit pas dépacer 1Mo</p>
+			<p>{{ 'user.legende.avatar'|trans|raw }}</p>
 		</div>
 
         {{ form_errors(form.password) }}
         {{ form_widget(form.password) }}
 
-        {{ form_widget(form.Enregistrer, { 'label': 'S\'inscrire' }) }}
+        {{ form_widget(form.Enregistrer, { 'label': 'inscription.label.submit'|trans }) }}
 
     {{ form_rest(form) }}
 
 	{{ form_end(form) }}
 
-    <br><p>Vous êtes déjà inscrit ? <a href="{{ path('login') }}">Connectez vous</a></p>
+    <br><p>{{ 'user.links.connexion'|trans }} <a href="{{ path('login') }}">{{ 'user.links.connexionlink'|trans }}</a></p>
 
 {% endblock %}

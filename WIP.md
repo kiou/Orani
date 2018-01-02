@@ -1,0 +1,1 @@
+Traduction en cours, ajout / gestion des pages

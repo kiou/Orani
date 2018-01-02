@@ -11,7 +11,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  *
  * @ORM\Table(name="user_newsletter")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\NewsletterRepository")
- * @UniqueEntity(fields="email", message="Vous êtes déjà inscrit à la newsletter")
+ * @UniqueEntity(fields="email", message="newsletter.validators.uniqueemail")
  * @ORM\HasLifecycleCallbacks
  */
 class Newsletter
@@ -43,10 +43,18 @@ class Newsletter
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
-     * @Assert\NotBlank(message="Compléter le champ email")
-     * @Assert\Email(message="Le format de l'email n'est pas bon ex : xyz@exemple.fr")
+     * @Assert\NotBlank(message="user.validators.email")
+     * @Assert\Email(message="user.validators.emailvalide")
      */
     private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="langue", type="string", length=8)
+     * @Assert\NotBlank(message="Compléter le champ langue")
+     */
+    private $langue;
 
     public function __construct(){
         $this->created = new \DateTime();
@@ -132,6 +140,22 @@ class Newsletter
     public function setEmail($email)
     {
         $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLangue()
+    {
+        return $this->langue;
+    }
+
+    /**
+     * @param string $langue
+     */
+    public function setLangue($langue)
+    {
+        $this->langue = $langue;
     }
 
 }
