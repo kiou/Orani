@@ -6,7 +6,6 @@
     <div id="recherche">
         <form action="{{ path('admin_menu_manager') }}" method="post">
             <select name="langue" class="form-elem medium">
-                <option value="">Choisir une langue</option>
                 {% for langue in langues %}
                     {% if recherches.langue == langue.code %}
                         <option value="{{ langue.code }}" selected>{{ langue.nom }}</option>

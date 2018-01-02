@@ -115,6 +115,9 @@ class MenuController extends Controller
             )
         );
 
+        /* En Français par défaut */
+        if(empty($recherches['langue'])) $recherches['langue'] = 'fr';
+
         /* La liste des langues */
         $langues = $this->getDoctrine()->getRepository('GlobalBundle:Langue')->findAll();
 

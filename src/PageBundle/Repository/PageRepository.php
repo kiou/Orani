@@ -27,7 +27,7 @@ class PageRepository extends \Doctrine\ORM\EntityRepository
          * recherche via la langue
          */
         if(!empty($langue)){
-            $qb->andWhere('p.langue LIKE :langue')
+            $qb->andWhere('p.langue = :langue')
                ->setParameter('langue', $langue);
         }
 

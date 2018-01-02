@@ -2,3 +2,9 @@ accueil:
     client:
         metatitle: Bienvenue sur Orani
         metadescription: Bienvenue sur Orani
+
+social:
+    share:
+        facebook: Partager sur facebook
+        twitter: Partager sur twitter
+        linkedin: Partager sur linkedin
