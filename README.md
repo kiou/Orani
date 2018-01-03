@@ -51,8 +51,8 @@ Mise en place des elements de base pour le developpement d'applications web
 
 ## Multilangue
 
-* Dans le fichier config.yml modifier le paramétre multilangue
-* Mettre à jour le prefix de route dans le fichier racine route.yml
+* Prefix de route dans le fichier racine route.yml
+* Selecteur de langue dynamique dans le header
 
 ## Compte
 Pour l'administration
