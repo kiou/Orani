@@ -1,13 +1,13 @@
 <div class="partage">
     <button class="twitter" data-titre="{{ titre }}" data-url="{{ app.request.schemeAndHttpHost ~ url }}">
-        <i class="fa fa-twitter"></i> Partager sur twitter
+        <i class="fa fa-twitter"></i> {{ 'social.share.twitter'|trans }}
     </button>
 
     <button class="facebook" data-titre="{{ titre }}" data-url="{{app.request.schemeAndHttpHost ~ url }}">
-        <i class="fa fa-facebook"></i> Partager sur facebook
+        <i class="fa fa-facebook"></i> {{ 'social.share.facebook'|trans }}
     </button>
 
     <button class="linkedin" data-titre="{{ titre }}" data-url="{{ app.request.schemeAndHttpHost ~ url }}">
-        <i class="fa fa-linkedin"></i> Partager sur linkedin
+        <i class="fa fa-linkedin"></i> {{ 'social.share.linkedin'|trans }}
     </button>
 </div>

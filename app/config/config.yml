@@ -11,7 +11,6 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
-    multilangue: true
 
 framework:
     #esi: ~
@@ -43,8 +42,6 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
-    globals:
-        multilangue: '%multilangue%'
 
 
 # Doctrine Configuration
