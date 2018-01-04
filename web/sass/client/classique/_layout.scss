@@ -93,11 +93,30 @@
 }
 
 .content{
-    padding: 20px 0px;
+    padding: 25px 0px;
 }
 
 .navigation{
     .inner{
         background-color: $grisNoir;
+    }
+}
+
+.bloc{
+    margin-bottom: 25px;
+    h2{
+        margin-bottom: 20px;
+    }
+    &.blocAccueil{
+        padding: 20px;
+        background-color: lighten($grisClair,13%);
+    }
+}
+
+.recherche{
+    margin-bottom: 20px;
+    text-align: right;
+    input, select, button{
+        padding:5px;
     }
 }

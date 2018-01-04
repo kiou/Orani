@@ -1,0 +1,22 @@
+.partage{
+    button{
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 14px;
+        background:none;
+        border: none;
+        color: $blanc;
+    }
+    .facebook{
+        background-color: $facebook;
+    }
+    .twitter{
+        background-color: $twitter;
+    }
+    .linkedin{
+        background-color: $linkedin;
+    }
+    .fa{
+        padding-right: 7px;
+    }
+}
