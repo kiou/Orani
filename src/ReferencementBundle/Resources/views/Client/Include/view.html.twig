@@ -11,5 +11,5 @@
 {% endif %}
 
 {% if data.referencement.ogimage is not null %}
-    <meta property="og:image" content="{{ app.request.schemeAndHttpHost ~ app.request.baseUrl ~'/'~ data.referencement.ogimage }}">
+    <meta property="og:image" content="{{ app.request.schemeAndHttpHost  ~'/web/img/referencement/og/'~ data.referencement.ogimage }}">
 {% endif %}
