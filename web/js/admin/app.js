@@ -1,5 +1,18 @@
 $(function(){
 
+    /* Select 2 */
+    $('.select2').select2({
+        placeholder: function(){
+            $(this).data('placeholder');
+        }
+    });
+    $('.select2create').select2({
+        tags: true,
+        placeholder: function(){
+            $(this).data('placeholder');
+        }
+    });
+
     /* onglet vertical */
     $('.tabs').tabs({
         collapsible: true,

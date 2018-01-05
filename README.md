@@ -76,6 +76,7 @@ Pour l'administration
 * Gestion du menu: [https://superfish.joelbirch.co/examples/](https://superfish.joelbirch.co/examples/)
 * OWL Slider: [https://owlcarousel2.github.io/OwlCarousel2/](https://owlcarousel2.github.io/OwlCarousel2/)
 * Lightbox2: [http://lokeshdhakar.com/projects/lightbox2/](http://lokeshdhakar.com/projects/lightbox2/)
+* Select2: [https://select2.org/](https://select2.org/)
 
 ## Documentation
 * Commandes courantes: [https://github.com/kiou/Orani/wiki/Commandes-courantes](https://github.com/kiou/Orani/wiki/Commandes-courantes)
