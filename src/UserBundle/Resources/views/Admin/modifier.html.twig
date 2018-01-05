@@ -32,7 +32,7 @@
 
 		{{ form_label(form.roles, "Rôles *") }}
 		{{ form_errors(form.roles) }}
-		{{ form_widget(form.roles, {'attr': {'class': 'liste big'}}) }}
+		{{ form_widget(form.roles, {'attr': {'class': 'form-elem big select2'}}) }}
 
         {% if utilisateur.avatar is not empty %}
             <div id="ajaxImage1">

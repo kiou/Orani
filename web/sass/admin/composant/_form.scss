@@ -1,31 +1,31 @@
 form{
-	ul:not(.tabsMenu){
-		width: 500px;
-		padding: 8px 5px 8px 20px;
-		background-color: $blanc;
-		position: relative;
-		li{ 
-			list-style: none; 
-			color: $grisClair;
-			font-size: 15px;
-		}
-		&:before{
-			content:'';
-			position: absolute;
-			left: 0px;
-			top: 0px;
-			bottom: 0px;
-			width: 6px;
-			background-color: $rouge;
-		}
-	}
+	ul:not(.tabsMenu):not(.select2-selection__rendered){
+        width: 500px;
+        padding: 8px 5px 8px 20px;
+        background-color: $blanc;
+        position: relative;
+        li{
+            list-style: none;
+            color: $grisClair;
+            font-size: 15px;
+        }
+        &:before{
+            content:'';
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            bottom: 0px;
+            width: 6px;
+            background-color: $rouge;
+        }
+    }
 }
 
 .form-poid{
-	padding:6px;
-	border: 1px solid $grisTresClair;
-	cursor: pointer;
-	margin-right: 11px;
+    padding:6px;
+    border: 1px solid $grisTresClair;
+    cursor: pointer;
+    margin-right: 11px;
 }
 
 /* Class de base pour la mise en forme des champs */
