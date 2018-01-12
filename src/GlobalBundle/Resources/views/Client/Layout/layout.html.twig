@@ -18,7 +18,7 @@
 
 <body>
 
-    <!-- Inscription à la newsletter -->
+    <!-- Newsletter -->
     {{ render(controller('UserBundle:User:ClientNewsletterBloc')) }}
 
 	<main class="main">
@@ -26,18 +26,15 @@
         <!-- Le header -->
         {{ include("GlobalBundle:Client/Include:header.html.twig") }}
 
-        <!-- Le menu -->
-        {{ render(controller('PageBundle:Menu:managerClient')) }}
-
         <!-- Contenu principal du site -->
         <div class="content">
             <div class="inner">
 
-                <!-- Breadcrumb au dessus du contenu -->
+                <!-- Breadcrumb -->
                 {% block breadcrumb %}
                 {% endblock %}
 
-                <!-- Affichage des messages en session -->
+                <!-- Messages -->
                 {{ include("GlobalBundle:Client/Include:flashbag.html.twig") }}
 
                 {% block content %}
@@ -48,15 +45,14 @@
             </div>
         </div>
 
-        <!-- Le footer -->
+        <!-- Footer -->
         {{ include("GlobalBundle:Client/Include:footer.html.twig") }}
 
-        <!-- Le pied de page -->
+        <!--Pied de page -->
         {{ include("GlobalBundle:Client/Include:bas.html.twig") }}
 
 	</main>
 	
-	<!-- Librairies javascript -->
 	{% if app.environment == 'prod' %}
 		<script type="text/javascript" src="{{ asset('js/client/app_min.js')}}"></script>
 	{% else %}
@@ -65,6 +61,7 @@
         <script type="text/javascript" src="{{ asset('js/owl/owl.carousel.min.js')}}"></script>
         <script type="text/javascript" src="{{ asset('js/lightbox/lightbox.js')}}"></script>
         <script type="text/javascript" src="{{ asset('js/select2/select2.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/dynamics.js')}}"></script>
         <script type="text/javascript" src="{{ asset('js/client/app.js')}}"></script>
 	{% endif %}
     {% block script %}{% endblock %}

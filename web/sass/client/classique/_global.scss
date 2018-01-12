@@ -1,38 +1,30 @@
-/**
-Mise en page
- */
 h1{
-    font-size: 35px;
-    color: $gris;
-    font-weight: 500;
+    font-size: 40px;
+    line-height:40px;
+    color: $violet;
+    font-weight: 400;
 }
 
 h2{
-    font-size: 27px;
-    color: $gris;
+    font-size: 25px;
+    line-height:30px;
     font-weight: 500;
+    color: $gris;
 }
 
 h3{
-    font-size: 20px;
+    font-size: 18px;
+    line-height:25px;
+    font-weight: 700;
     color: $gris;
-    font-weight: 500;
-}
-
-h4{
-    font-size: 15px;
-    color: $gris;
-    font-weight: 500;
 }
 
 p{
-    font-size:14px;
-    color: $gris;
+    font-size: 15px;
+    line-height:25px;
+    color: $grisContenu;
 }
 
-/**
-Wysiwyg
- */
 .wysiwyg{
     p{
         margin-bottom: 20px;
@@ -42,18 +34,5 @@ Wysiwyg
     }
     h3{
         margin: 5px 0px 10px 0px;
-    }
-    ul{
-        margin: 0px 0px 20px 30px;
-        li{
-            font-size:14px;
-            color: $gris;
-        }
-    }
-
-    img{
-        max-width: 100%;
-        height:auto;
-        margin-bottom: 20px;
     }
 }

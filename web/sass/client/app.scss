@@ -7,7 +7,7 @@
 /**************
 Thème classique
 **************/
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,300,500,500italic,700,700italic,900,100'");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 @import "classique/variable";
 @import "classique/reset";
 @import "classique/global";
@@ -21,6 +21,7 @@ Composant
 @import "composant/form";
 @import "composant/message";
 @import "composant/breadcrumb";
+@import "composant/bouton";
 @import "composant/partage";
 
 /*****

@@ -1,0 +1,11 @@
+.btn{
+    display: inline-block;
+    background-color: $gris;
+    padding:13px 35px;
+    @include border-radius($borderBtn);
+    color: $blanc;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+}

@@ -1,0 +1,26 @@
+/* Mise en avant page d'accueil */
+.aboutimage{
+    width: 100%;
+    background-color: $gris;
+    @include border-radius($borderBox);
+    margin-bottom: 30px;
+}
+
+.aboutimageLeft{
+    width: 30%;
+    float: left;
+}
+
+.aboutimageRight{
+    width: 70%;
+    float: right;
+    padding:140px;
+    background-color: $blanc;
+    @include border-right-radius($borderBox);
+    h1{
+        margin-bottom: 30px;
+    }
+    p{
+        margin-bottom: 30px;
+    }
+}

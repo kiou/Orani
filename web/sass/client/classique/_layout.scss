@@ -1,122 +1,107 @@
 .main{
-    max-width: 1820px;
+    padding:30px 0px 0px 0px;
+    max-width: 1170px;
     margin: 0px auto;
 }
 
 .inner{
     max-width: 1170px;
-    margin:0px auto;
+    margin: 0px auto;
+}
+
+.header{
+    background-color: $blanc;
+    @include border-radius($borderBox);
+    .inner{
+        padding:0px 40px;
+    }
+}
+
+.headerLeft{
+    float: left;
+    width:20%;
+}
+
+.headerLogo{
+    a{
+        padding: 30px 0px;
+        display: block;
+    }
+}
+
+.headerCenter{
+    float: left;
+    width: 60%;
+    text-align: center;
+}
+
+.headerRight{
+    float:left;
+    width: 20%;
+    text-align: right;
+}
+
+.headerReseaux{
+    display: inline-block;
+    padding: 30px 0px;
+    a{
+        color:$gris;
+        font-size: 19px;
+        display: inline-block;
+        padding: 0px 7px;
+    }
+}
+
+.headerPictos{
+    display: inline-block;
+    padding:30px 0px 30px 30px;
+    a{
+        color: $gris;
+        font-size:19px;
+        display: inline-block;
+    }
+}
+
+.navigation{
+    padding:26px 0px 22px 0px;
+}
+
+.content{
+    padding:30px 0px 0px 0px;
 }
 
 .newsletter{
     position: fixed;
     z-index:10;
-    background-color: $grisFonce;
     left: 0px;
     right: 0px;
     top: 0px;
-    @include transition-property(transform);
+    @include transition-property(transform, opacity);
     @include transition-duration(0.6s);
-    @include transition-timing-function(ease);
+    @include transition-timing-function(ease-in-out);
     @include transform(translateY(-100%));
+    opacity:0.8;
     &.active{
+        opacity:1;
         @include transform(translateY(0px));
     }
-
-    h2{
-        text-align: center;
-        color: $blanc;
-        margin-bottom: 20px;
+    .inner{
+        padding:80px 0px;
     }
 
-    .inner{
-        max-width: 450px;
-        padding:45px 0px;
+    h2{
+        color:$blanc;
     }
 }
 
-.newsletterClose{
+.newsletterWave{
     position: absolute;
+    left: 0px;
     top: 0px;
     right: 0px;
-    color: $blanc;
-    padding:20px;
-    cursor: pointer;
-}
-
-.header{
-    .inner{
-        padding:20px;
-        background-color: $grisClair;
-    }
-}
-
-.headerLogo{
-    float: left;
-    img{
-        height: 60px;
-        width: 60px;
-        background-color: $blanc;
-        @include border-radius(50%);
-    }
-}
-
-.headerReseaux{
-    float: right;
-    padding:13px 0px 13px 20px;
-    a{
-        height: 30px;
-        width: 30px;
-        text-align: center;
-        line-height: 30px;
-        color: $blanc;
-        font-size: 15px;
-        @include border-radius(50%);
-        background-color: $grisFonce;
-        display: inline-block;
-    }
-}
-
-.headerSelecteur{
-    float: right;
-    padding:13px 0px;
-    select{
-        cursor: pointer;
-        padding:5px;
-    }
-}
-
-.headerNewsletter{
-    float: right;
-    font-size: 14px;
-    padding:20px 0px 20px 20px;
-}
-
-.content{
-    padding: 25px 0px;
-}
-
-.navigation{
-    .inner{
-        background-color: $grisNoir;
-    }
-}
-
-.bloc{
-    margin-bottom: 25px;
-    h2{
-        margin-bottom: 20px;
-    }
-    &.blocAccueil{
-        padding: 20px;
-        background-color: lighten($grisClair,13%);
-    }
-}
-
-.recherche{
-    margin-bottom: 20px;
-    text-align: right;
-    input, select, button{
-        padding:5px;
-    }
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    fill: $gris;
+    z-index:-1;
 }
