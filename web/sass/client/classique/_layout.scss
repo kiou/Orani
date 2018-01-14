@@ -1,6 +1,5 @@
 .main{
-    padding:30px 0px 0px 0px;
-    max-width: 1170px;
+    padding:0px 0px 0px 0px;
     margin: 0px auto;
 }
 
@@ -12,9 +11,8 @@
 .header{
     background-color: $blanc;
     @include border-radius($borderBox);
-    .inner{
-        padding:0px 40px;
-    }
+    position: relative;
+
 }
 
 .headerLeft{
@@ -88,7 +86,9 @@
 }
 
 .content{
-    padding:30px 0px;
+    .inner{
+        padding:30px 0px;
+    }
 }
 
 .contentTitle{
@@ -99,7 +99,7 @@
 
 .newsletter{
     position: fixed;
-    z-index:10;
+    z-index:100;
     left: 0px;
     right: 0px;
     top: 0px;

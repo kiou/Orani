@@ -12,6 +12,7 @@ module.exports = function(grunt){
                     'web/js/owl/owl.carousel.min.js',
                     'web/js/lightbox/lightbox.js',
                     'web/js/select2/select2.js',
+                    'web/js/sticky.js',
                     'web/js/dynamics.js',
                     'web/js/client/app.js',
 				],

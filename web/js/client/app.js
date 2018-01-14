@@ -26,6 +26,8 @@ function newsletterWave(hide = false){
  */
 $(function(){
 
+    $(".header").sticky({topSpacing:0});
+
     /* Navigation via JS */
     $(document).on('click','.navFull',function(e){
         e.preventDefault();
