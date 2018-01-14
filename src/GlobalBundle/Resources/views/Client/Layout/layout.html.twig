@@ -26,6 +26,10 @@
         <!-- Le header -->
         {{ include("GlobalBundle:Client/Include:header.html.twig") }}
 
+        <!-- Breadcrumb -->
+        {% block breadcrumb %}{% endblock %}
+
+        <!-- Titre du contenu -->
         <div class="contentTitle">
             <div class="inner">
                 {% block contentTitle %}{% endblock %}
@@ -35,10 +39,6 @@
         <!-- Contenu principal du site -->
         <div class="content">
             <div class="inner">
-
-                <!-- Breadcrumb -->
-                {% block breadcrumb %}
-                {% endblock %}
 
                 <!-- Messages -->
                 {{ include("GlobalBundle:Client/Include:flashbag.html.twig") }}

@@ -24,8 +24,15 @@
 
 .headerLogo{
     a{
+        @include transition-property(opacity);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease);
         padding: 30px 0px;
         display: block;
+        opacity:1;
+        &:hover{
+            opacity: 0.6;
+        }
     }
 }
 
@@ -45,10 +52,17 @@
     display: inline-block;
     padding: 30px 0px;
     a{
+        @include transition-property(opacity);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease);
         color:$gris;
         font-size: 19px;
         display: inline-block;
         padding: 0px 7px;
+        opacity: 1;
+        &:hover{
+            opacity:0.6;
+        }
     }
 }
 
@@ -56,9 +70,16 @@
     display: inline-block;
     padding:30px 0px 30px 30px;
     a{
+        @include transition-property(opacity);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease);
         color: $gris;
         font-size:19px;
         display: inline-block;
+        opacity: 1;
+        &:hover{
+            opacity:0.6;
+        }
     }
 }
 
@@ -82,21 +103,37 @@
     left: 0px;
     right: 0px;
     top: 0px;
-    @include transition-property(transform, opacity);
+    @include transition-property(transform);
     @include transition-duration(0.6s);
     @include transition-timing-function(ease-in-out);
     @include transform(translateY(-100%));
-    opacity:0.8;
     &.active{
-        opacity:1;
         @include transform(translateY(0px));
+        .inner{
+            @include transition-delay(0.4s);
+            opacity:1;
+        }
     }
     .inner{
-        padding:80px 0px;
+        @include transition-property(opacity);
+        @include transition-duration(0.2s);
+        @include transition-timing-function(ease-in-out);
+        padding:65px 0px;
+        max-width: 500px;
+        opacity:0;
+    }
+
+    label{
+        color: $blanc;
     }
 
     h2{
-        color:$blanc;
+        font-size: 40px;
+        line-height: 40px;
+        color: $blanc;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 30px;
     }
 }
 
@@ -110,4 +147,13 @@
     height: 100%;
     fill: $gris;
     z-index:-1;
+}
+
+.newsletterClose{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: $blanc;
+    cursor: pointer;
+    padding:30px;
 }

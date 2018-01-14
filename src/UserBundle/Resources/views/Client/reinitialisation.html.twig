@@ -3,9 +3,11 @@
 {% block metaTitle %}{{ 'reinitialisation.metatitle'|trans }}{% endblock %}
 
 {% block breadcrumb %}
-    <div id="breadcrumb">
-        {{ include("GlobalBundle:Client/Include:breadcrumb.html.twig", {'breadcrumb':breadcrumb }) }}
-    </div>
+    {{ include("GlobalBundle:Client/Include:breadcrumb.html.twig", {'breadcrumb':breadcrumb }) }}
+{% endblock %}
+
+{% block contentTitle %}
+    <h1>{{ 'reinitialisation.title'|trans }}</h1>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +20,10 @@
         {{ form_errors(form.email) }}
         {{ form_widget(form.email, {'attr': {'class': 'form-elem big'}}) }}<br>
 
-        {{ form_widget(form.Enregistrer, { 'label': 'reinitialisation.label.submit'|trans }) }}
+        {{ form_widget(form.Enregistrer, {
+            'attr' : {'data-btn': 'reinitialisation.label.submit'|trans, 'class' : 'btn' },
+            'label' : 'reinitialisation.label.submit'|trans
+        }) }}
 
         {{ form_rest(form) }}
 

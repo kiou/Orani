@@ -8,15 +8,17 @@
 
             {{ form_errors(form) }}
 
-            {{ form_label(form.email, 'newsletter.client.bloclabel.email'|trans) }}
             {{ form_errors(form.email) }}
-            {{ form_widget(form.email, {'attr': {'class': 'form-elem'}}) }}
+            {{ form_widget(form.email, {'attr': {'class': 'form-elem', 'placeholder':'user.label.emailexemple'|trans }}) }}
 
             {{ form_widget(form.langue, {'value': app.request.locale}) }}
 
             <br>
 
-            {{ form_widget(form.Enregistrer, { 'label': 'newsletter.client.bloclabel.submit'|trans }) }}
+            {{ form_widget(form.Enregistrer, {
+                'attr' : {'data-btn': 'newsletter.client.bloclabel.submit'|trans, 'class' : 'btn type1' },
+                'label' : 'newsletter.client.bloclabel.submit'|trans
+            }) }}
 
             {{ form_rest(form) }}
 

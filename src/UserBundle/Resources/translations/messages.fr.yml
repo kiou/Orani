@@ -26,6 +26,7 @@ user:
         prenom: Prénom *
         avatar: Avatar
         email: Email *
+        emailexemple: Xyz@exemple.fr
         password: Mot de passe *
         passwordconfirmation: Confirmation *
     legende:
@@ -37,8 +38,18 @@ user:
         reinitialisationlink: Réinitialisation
         connexion: Vous êtes déjà inscrit ?
         connexionlink: Connectez vous
+        deconnexion: Se deconnecter
+    client:
+        dashboard:
+            metatitle: Compte utilisateur
+            title: Compte utilisateur
+        aboutimage:
+            title: Lorem ipsum dolor sit amet, consectetur.
+            content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet ipsa molestiae nulla pariatur provident! Accusamus aliquam aperiam atque cumque, delectus dolore enim magni modi nam natus necessitatibus nulla officia praesentium quas quasi quos repellat sint sit sunt, tempora, temporibus voluptatem.
+            link: En savoir +
 
 reinitialisation:
+    title: Demande de réinitialisation
     metatitle: Demande de réinitialisation
     label:
         submit: Envoyer ma demande
@@ -53,6 +64,7 @@ reinitialisation:
         link: Réinitialisation mon mot de passe
 
 reinitialisationpassword:
+    title: Réinitialisation de mot de passe
     metatitle: Réinitialisation de mot de passe
     label:
         submit: Réinitialiser
@@ -61,3 +73,4 @@ reinitialisationpassword:
     breadcrumb:
         niveau1: Connexion
         niveau2: Réinitialisation de mot de passe
+

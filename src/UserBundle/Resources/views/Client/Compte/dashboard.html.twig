@@ -1,9 +1,11 @@
 {% extends "GlobalBundle:Client/Layout:layout.html.twig" %}
 
-{% block metaTitle %}Mon compte{% endblock %}
+{% block metaTitle %}{{ 'user.client.dashboard.metatitle'|trans }}{% endblock %}
+
+{% block contentTitle %}
+    <h1>{{ 'user.client.dashboard.title'|trans }}</h1>
+{% endblock %}
 
 {% block content %}
-    <p>Informations sur le compte de l'utilisateur</p>
-
-    <a href="{{ path('logout') }}">Se deconnecter</a>
+    <a href="{{ path('logout') }}" class="btn" data-btn="{{ 'user.links.deconnexion'|trans }}">{{ 'user.links.deconnexion'|trans }}</a>
 {% endblock %}

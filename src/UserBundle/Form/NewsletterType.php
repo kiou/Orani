@@ -20,10 +20,7 @@ class NewsletterType extends AbstractType
         $builder
             ->add('email', EmailType::class)
             ->add('langue', HiddenType::class)
-            ->add('Enregistrer', SubmitType::class, array(
-                    'attr' => array('class' => 'btn type1')
-                )
-            );
+            ->add('Enregistrer', SubmitType::class);
     }
     
     /**

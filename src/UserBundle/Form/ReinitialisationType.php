@@ -17,10 +17,7 @@ class ReinitialisationType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class)
-            ->add('Enregistrer', SubmitType::class, array(
-                    'attr' => array('class' => 'form-submit turquoise medium')
-                )
-            );
+            ->add('Enregistrer', SubmitType::class);
     }
     
     /**

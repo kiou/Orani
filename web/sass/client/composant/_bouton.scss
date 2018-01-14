@@ -64,6 +64,21 @@
     &.type3{
         background-color: $grisContenu;
     }
+    
+    .fa-refresh{
+        position: absolute;
+        left: calc(50% - 15px);
+        top: calc(50% - 15px);
+        color: $blanc;
+        z-index:3;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 15px;
+        text-align: center;
+        @include border-radius(50%);
+        background-color: rgba($gris, 0.7);
+    }
 }
 
 button{

@@ -1,12 +1,17 @@
-<ul>
-	{% for nom, route in breadcrumb %}
-		
-		{% if route %}
-			<li><a href="{{ route }}">{{ nom }}</a><span class="divider">/</span></li>
-		{% else %}
-			<li>{{ nom }}</li>
-		{% endif %}
+<div class="breadcrumb">
+	<div class="inner">
+		<ul>
+            {% for nom, route in breadcrumb %}
 
-	{% endfor %}
-</ul>
+                {% if route %}
+					<li><a href="{{ route }}">{{ nom }}</a><i class="fa fa-angle-right"></i></li>
+                {% else %}
+					<li>{{ nom }}</li>
+                {% endif %}
+
+            {% endfor %}
+		</ul>
+	</div>
+</div>
+
 

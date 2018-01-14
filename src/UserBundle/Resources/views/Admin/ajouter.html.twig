@@ -25,14 +25,21 @@
 
 		{{ form_label(form.roles, "Rôles *") }}
 		{{ form_errors(form.roles) }}
-		{{ form_widget(form.roles, {'attr': {'class': 'form-elem big select2'}}) }}
-		
+		<div class="liste big">
+            {{ form_widget(form.roles) }}
+		</div>
+
 		{{ form_label(form.file, "Avatar") }}
 		{{ form_errors(form.file) }}
 		{{ form_widget(form.file, {'attr': {'class': 'form-elem big'}}) }}
 		<div class="form-legende">
 			L'image doit faire exactement 150px par 150px<br>Le format doit être (jpg, png)<br>Le poid ne doit pas dépacer 1Mo
 		</div>
+
+		{{ form_errors(form.password) }}
+		{{ form_widget(form.password) }}
+
+		{{ form_widget(form.Enregistrer, {'attr': {'class': 'form-submit medium turquoise'}}) }}
 		
 		{{ form_rest(form) }}
 

@@ -89,7 +89,7 @@ $(function(){
 
                 /* Afficher le résultat */
                 if(data.succes != undefined){
-                    html = '<div class="message" id="succes"><span class="messageCouleur"></span><p>';
+                    html = '<div class="message succes"><p>';
                         html += data.succes;
                     html += '</p></div>';
 
@@ -99,7 +99,7 @@ $(function(){
                 else{
                     var label = Object.keys(data.error);
 
-                    html = '<div class="message" id="erreur"><span class="messageCouleur"></span><p>';
+                    html = '<div class="message error"><p>';
                         for (var i = 0; i < label.length; i++) {
                             html += data.error[label[i]][0]+'<br>';
                         }

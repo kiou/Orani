@@ -14,8 +14,7 @@ class RegisterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->remove('roles')
-        ;
+            ->remove('roles');
     }
 
     public function getParent()

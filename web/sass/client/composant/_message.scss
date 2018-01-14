@@ -1,0 +1,67 @@
+.message{
+    padding: 20px 20px 20px 60px;
+    @include border-radius($borderBox);
+    position: relative;
+    margin-bottom: 30px;
+    border:1px solid $gris;
+    background-color: $blanc;
+    &:before{
+        content:'\f05a';
+        font-family: FontAwesome;
+        position: absolute;
+        left: 15px;
+        top: calc(50% - 15px);
+        color: $blanc;
+        font-size: 25px;
+        height: 30px;
+        width: 30px;
+        color: $gris;
+        text-align: center;
+        line-height:30px;
+    }
+
+    &.error{
+        background-color: $rouge;
+        border: 1px solid $rouge;
+        p{
+            color: $blanc;
+        }
+        &:before{
+            content:'\f071';
+            color: $blanc;
+        }
+    }
+
+    &.succes{
+        background-color: $vert;
+        border: 1px solid $vert;
+        p{
+            color: $blanc;
+        }
+        &:before{
+            content:'\f058';
+            color: $blanc;
+        }
+    }
+}
+
+form{
+    ul{
+        padding: 8px 5px 8px 20px;
+        position: relative;
+        &:before{
+            content:'';
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            bottom: 0px;
+            width: 6px;
+            background-color: $rouge;
+        }
+        li{
+            list-style: none;
+            color: $rouge;
+            font-size: 15px;
+        }
+    }
+}

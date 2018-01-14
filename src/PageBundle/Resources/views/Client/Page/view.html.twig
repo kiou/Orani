@@ -7,9 +7,11 @@
     {% include"ReferencementBundle:Client/Include:view.html.twig" with {'data': page} %}
 {% endblock %}
 
-{% block content %}
+{% block contentTitle %}
     <h1>{{ page.titre }}</h1>
+{% endblock %}
 
+{% block content %}
     <div class="wysiwyg">
         {{ page.contenu|raw }}
     </div>

@@ -23,10 +23,7 @@ class PageType extends AbstractType
                 ->add('contenu', TextareaType::class)
                 ->add('referencement', ReferencementType::class)
                 ->add('langue', LangueType::class)
-                ->add('Enregistrer', SubmitType::class, array(
-                        'attr' => array('class' => 'form-submit turquoise medium')
-                    )
-                );
+                ->add('Enregistrer', SubmitType::class);
     }
     
     /**

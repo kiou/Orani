@@ -38,7 +38,10 @@
         {{ form_errors(form.password) }}
         {{ form_widget(form.password) }}
 
-        {{ form_widget(form.Enregistrer, { 'label': 'inscription.label.submit'|trans }) }}
+        {{ form_widget(form.Enregistrer, {
+			'attr' : {'data-btn': 'inscription.label.submit'|trans, 'class' : 'btn' },
+			'label' : 'inscription.label.submit'|trans
+		}) }}
 
     {{ form_rest(form) }}
 

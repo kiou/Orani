@@ -1,0 +1,29 @@
+.breadcrumb{
+    .inner{
+        padding: 30px 0px 0px 0px;
+    }
+    ul{
+        background-color: $blanc;
+        list-style: none;
+        padding:20px 40px;
+        @include border-radius($borderBox);
+        li{
+            display: inline-block;
+            color: $violet;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 600;
+            a{
+                color: lighten($grisContenu, 20%);
+                font-size: 11px;
+                text-transform: uppercase;
+                font-weight: 600;
+                }
+            .fa-angle-right{
+                padding: 0px 15px;
+                color: $violet;
+                font-weight: 600;
+            }
+        }
+    }
+}

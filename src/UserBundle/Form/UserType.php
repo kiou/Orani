@@ -29,6 +29,7 @@ class UserType extends AbstractType
             ->add('email', EmailType::class)
             ->add('roles', ChoiceType::class, array(
                     'multiple' => true,
+                    'expanded' => true,
                     'label'=>'Choisir un rôle',
                     'choices' => array(
                         'ROLE_ADMIN' => 'ROLE_ADMIN',
@@ -45,10 +46,7 @@ class UserType extends AbstractType
                     'second_options' => array('label' => 'user.label.passwordconfirmation')
                 )
             )
-            ->add('Enregistrer', SubmitType::class, array(
-                    'attr' => array('class' => 'form-submit turquoise medium')
-                )
-            );
+            ->add('Enregistrer', SubmitType::class);
         ;
     }
     

@@ -1,8 +1,6 @@
 {% for flashMessage in app.session.flashbag.get('error') %}
     {% if loop.first %} 
-    	<div class="message" id="erreur">
-    	<span class="messageCouleur"></span>
-    	<h3>Erreur</h3> 
+    	<div class="message error">
     	<p>
     {% endif %}
 	
@@ -13,9 +11,7 @@
 
 {% for flashMessage in app.session.flashbag.get('succes') %}
     {% if loop.first %} 
-    	<div class="message" id="succes">
-    	<span class="messageCouleur"></span>
-    	<h3>Succès</h3> 
+    	<div class="message succes">
     	<p>
     {% endif %}
 

@@ -35,4 +35,22 @@ p{
     h3{
         margin: 5px 0px 10px 0px;
     }
+    ul, ol{
+        margin: 0px 0px 20px 30px;
+        li{
+            font-size: 15px;
+            line-height:25px;
+            color: $grisContenu;
+        }
+    }
+    img{
+        margin-bottom: 20px;
+        max-width: 100%;
+        height:auto;
+    }
+
+    iframe{
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
 }
