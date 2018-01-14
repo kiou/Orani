@@ -26,6 +26,16 @@ function newsletterWave(hide = false){
  */
 $(function(){
 
+    /* Navigation via JS */
+    $(document).on('click','.navFull',function(e){
+        e.preventDefault();
+
+        var elem = $(this);
+        var lien = (elem.attr('href') != undefined) ? elem.attr('href') : elem.attr('data-url');
+        window.location.href = lien;
+
+    });
+
     /* Select 2 */
     $('.select2').select2({
         placeholder: function(){
