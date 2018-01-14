@@ -26,6 +26,12 @@
         <!-- Le header -->
         {{ include("GlobalBundle:Client/Include:header.html.twig") }}
 
+        <div class="contentTitle">
+            <div class="inner">
+                {% block contentTitle %}{% endblock %}
+            </div>
+        </div>
+
         <!-- Contenu principal du site -->
         <div class="content">
             <div class="inner">

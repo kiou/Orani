@@ -2,6 +2,10 @@
 
 {% block metaTitle %}{{ 'inscription.metatitle'|trans }}{% endblock %}
 
+{% block contentTitle %}
+	<h1>{{ 'inscription.title'|trans }}</h1>
+{% endblock %}
+
 {% block content %}
 
 	{{ form_start(form, {'attr': {'class': 'form-horizontal', novalidate: 'novalidate'}}) }}
@@ -28,7 +32,7 @@
 		{{ form_errors(form.file) }}
 		{{ form_widget(form.file, {'attr': {'class': 'form-elem big'}}) }}
 		<div class="form-legende">
-			<p>{{ 'user.legende.avatar'|trans|raw }}</p>
+			{{ 'user.legende.avatar'|trans|raw }}
 		</div>
 
         {{ form_errors(form.password) }}

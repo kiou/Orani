@@ -21,7 +21,7 @@ class NewsletterType extends AbstractType
             ->add('email', EmailType::class)
             ->add('langue', HiddenType::class)
             ->add('Enregistrer', SubmitType::class, array(
-                    'attr' => array('class' => 'form-submit turquoise medium')
+                    'attr' => array('class' => 'btn type1')
                 )
             );
     }

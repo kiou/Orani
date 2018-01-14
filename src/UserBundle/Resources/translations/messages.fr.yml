@@ -8,11 +8,13 @@ newsletter:
             succes: Vous êtes maintenant inscrit à la newsletter
 
 connexion:
+    title: Connexion
     metatitle: Connexion
     label:
         submit: Se connecter
 
 inscription:
+    title: Inscription
     metatitle: Inscription
     label:
         submit: "S'inscrire"

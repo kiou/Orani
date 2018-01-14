@@ -4,8 +4,69 @@
     padding:13px 35px;
     @include border-radius($borderBtn);
     color: $blanc;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    &:before{
+        content:attr(data-btn);
+        position: absolute;
+        z-index:1;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        padding:13px 35px;
+        background-color: $violet;
+        color: $blanc;
+        @include transition-property(transform, opacity);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease);
+        @include transform(translateY(-100%));
+        opacity:0;
+    }
+    &:hover{
+        &:before{
+            @include transform(translateY(0px));
+            opacity:1;
+        }
+    }
+
+    &.small{
+        font-size: 11px;
+        padding:9px 15px;
+        @include border-radius($borderBtnSmall);
+        &:before{
+            padding: 9px 15px;
+        }
+    }
+
+    &.big{
+        font-size: 13px;
+        padding:22px 60px;
+        @include border-radius($borderBtnBig);
+        &:before{
+            padding: 22px 60px;
+        }
+    }
+    
+    &.type1{
+        background-color: $blanc;
+        color: $gris;
+    }
+
+    &.type2{
+        background-color: $violet;
+    }
+
+    &.type3{
+        background-color: $grisContenu;
+    }
+}
+
+button{
+    border: none;
+    cursor: pointer;
 }
