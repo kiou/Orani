@@ -1,0 +1,34 @@
+.pagination{
+    background-color: $blanc;
+    padding:25px 30px;
+    @include border-radius($borderBox);
+    text-align: center;
+    span{
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        color: $gris;
+        font-size: 14px;
+        font-weight: 500;
+        line-height:30px;
+        @include border-radius(50%);
+        &.current{
+            background-color: $gris;
+            color: $blanc;
+        }
+        a{
+            color: $gris;
+            font-size: 14px;
+            font-weight: 600;
+            display: block;
+            @include border-radius(50%);
+            @include transition-property(background-color, color);
+            @include transition-duration(0.3s);
+            @include transition-timing-function(ease);
+            &:hover{
+                background-color: $gris;
+                color: $blanc;
+            }
+        }
+    }
+}

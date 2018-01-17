@@ -48,3 +48,17 @@ select{
         font-weight: 600;
     }
 }
+
+.recherche{
+    .form-elem{
+        border:1px solid darken($gris,10%);
+        background-color: darken($gris,5%);
+        color: $blanc;
+    }
+}
+
+.form-recherche{
+    float: left;
+    width: calc(94% / 3);
+    margin-right: 3%;
+}

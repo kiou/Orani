@@ -26,6 +26,12 @@ function newsletterWave(hide = false){
  */
 $(function(){
 
+    /* Hauteur responsive */
+    if($('.matchHeight').length != 0){
+        $('.matchHeight').matchHeight();
+    }
+
+    /* Menu collant */
     $(".header").sticky({topSpacing:0});
 
     /* Navigation via JS */

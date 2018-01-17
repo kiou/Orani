@@ -154,3 +154,30 @@
     cursor: pointer;
     padding:30px;
 }
+
+.recherche{
+    padding: 30px 30px 10px 30px;
+    background-color: $gris;
+    margin-bottom: 30px;
+    @include border-radius($borderBox);
+}
+
+.bloc{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.blocHeader{
+    text-align: center;
+    margin-bottom: 30px;
+    h2{
+        color: $violet;
+    }
+    p{
+        font-weight: 700;
+    }
+}
+
+.blocFooter{
+    text-align: center;
+}
