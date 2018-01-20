@@ -132,10 +132,11 @@ class MenuController extends Controller
     /**
      * Gestion client
      */
-    public function managerClientAction(Request $request)
+    public function managerClientAction(Request $request, $sfmenu)
     {
         return $this->render('PageBundle:Client/Menu:manager.html.twig', array(
-                'menus' => $this->getRecursiveMenu(3, null, $request->getLocale(), false)
+                'menus' => $this->getRecursiveMenu(3, null, $request->getLocale(), false),
+                'sfmenu' => $sfmenu
             )
         );
     }

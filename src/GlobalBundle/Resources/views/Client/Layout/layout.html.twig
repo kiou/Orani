@@ -21,9 +21,12 @@
     <!-- Newsletter -->
     {{ render(controller('UserBundle:User:ClientNewsletterBloc')) }}
 
-	<main class="main">
+    <!-- Header mobile -->
+    {{ include("GlobalBundle:Client/Include:headermobile.html.twig") }}
 
-        <!-- Le header -->
+    <main class="main">
+
+        <!-- Header -->
         {{ include("GlobalBundle:Client/Include:header.html.twig") }}
 
         <!-- Breadcrumb -->

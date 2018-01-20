@@ -8,7 +8,7 @@
         </div>
 
         <div class="headerCenter">
-            {{ render(controller('PageBundle:Menu:managerClient')) }}
+            {{ render(controller('PageBundle:Menu:managerClient',{'sfmenu':true})) }}
         </div>
 
         <div class="headerRight">
@@ -18,14 +18,18 @@
             </div>
             -->
 
+            <div class="headerPictos">
+                <a href="#" class="openNewsletter"><i class="fa fa-envelope-o"></i></a>
+            </div>
+
             <div class="headerReseaux">
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
                 <a href="#"><i class="fa fa-linkedin"></i></a>
             </div>
 
-            <div class="headerPictos">
-                <a href="#" class="openNewsletter"><i class="fa fa-envelope-o"></i></a>
+            <div class="headerBtnMobile">
+                <span></span>
             </div>
 
             <div class="clear"></div>

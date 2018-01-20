@@ -1,3 +1,12 @@
+.main{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-x: hidden;
+}
+
 .inner{
     max-width: 1170px;
     margin: 0px auto;
@@ -5,6 +14,10 @@
 
 .header{
     background-color: $blanc;
+
+    .navigation{
+        padding:26px 0px 22px 0px;
+    }
 }
 
 .headerLeft{
@@ -39,7 +52,7 @@
 }
 
 .headerReseaux{
-    display: inline-block;
+    float: right;
     padding: 30px 0px;
     a{
         @include transition-property(opacity);
@@ -57,7 +70,7 @@
 }
 
 .headerPictos{
-    display: inline-block;
+    float: right;
     padding:30px 0px 30px 30px;
     a{
         @include transition-property(opacity);
@@ -73,8 +86,68 @@
     }
 }
 
-.navigation{
-    padding:26px 0px 22px 0px;
+.headerBtnMobile{
+    position: relative;
+    height: 86px;
+    width: 50px;
+    cursor: pointer;
+    display: none;
+    float: right;
+    span{
+        position: absolute;
+        left: 0px;
+        top: 50%;
+        left: 50%;
+        width: 22px;
+        height: 2px;
+        display: block;
+        background-color: $gris;
+        @include transition-property(transform,background);
+        @include transition-duration(0.4s);
+        @include transform(translateX(-50%) translateY(-50%));
+        &::before, &::after{
+            content:'';
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 22px;
+            height: 2px;
+            display: block;
+            background-color: $gris;
+            @include transform-origin(50%, 50%);
+            @include transition-property(transform, width);
+            @include transition-duration(0.4s);
+            @include transition-timing-function(ease);
+            @include transform(translateY(-6px));
+        }
+        &::after{
+            @include transform(translateY(6px));
+            width: 17px;
+        }
+    }
+    &.active span{
+        background: transparent;
+    }
+    &.active span::before{
+        @include transform(translateY(0px) rotate(45deg));
+        background-color: $violet;
+    }
+    &.active span::after{
+        @include transform(translateY(0px) rotate(-45deg));
+        width: 22px;
+        background-color: $violet;
+    }
+}
+
+.headerMobile{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index:1000;
+    background-color:rgba($gris,0.8);
+    display: none;
 }
 
 .content{

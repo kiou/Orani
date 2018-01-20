@@ -26,7 +26,25 @@ function newsletterWave(hide = false){
  */
 $(function(){
 
-    /* Hauteur responsive */
+    /* Header mobile */
+    $(document).on('click','.headerBtnMobile',function(){
+        $(this).addClass('active');
+
+        $('.main').css({'overflow':'hidden'});
+        $('.headerMobile').fadeIn(200);
+    });
+
+    /* Fermer header mobile */
+    $(document).on('click','.headerMobile',function(){
+        $('.headerBtnMobile').removeClass('active');
+        $('.main').css({
+            'overflow-x':'hidden',
+            'overflow-y':'auto'
+        });
+        $(this).fadeOut(200);
+    });
+
+        /* Hauteur responsive */
     if($('.matchHeight').length != 0){
         $('.matchHeight').matchHeight();
     }

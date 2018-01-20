@@ -2,7 +2,7 @@
     <nav class="navigation">
 
         <!-- parents -->
-        <ul class="sf-menu">
+        <ul {% if sfmenu %} class="sf-menu" {% endif %}>
             {% for menu in menus %}
                 <li>
                     {{ include("PageBundle:Client/Menu:actions.html.twig",{menu:menu}) }}
