@@ -163,3 +163,7 @@ $(function(){
     });
 
 });
+
+$(window).on('load', function() {
+    $('.newsletter').css({'display':'block'});
+});

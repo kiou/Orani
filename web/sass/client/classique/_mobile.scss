@@ -1,11 +1,34 @@
-@media screen and (max-width: 680px) {
-
-}
-
-@media screen and (max-width: 960px) {
-
-}
-
 @media screen and (max-width: 1200px) {
 
+    .inner{
+        margin: 0px 30px;
+    }
+
+    .newsletter{
+        .inner{
+            margin: 0px auto;
+        }
+    }
+
+    .aboutimageRight{
+        padding: 110px;
+    }
+
 }
+
+@media screen and (max-width: 1024px) {
+
+    .aboutimageRight{
+        padding: 90px;
+    }
+
+    .inner{
+        margin: 0px 20px;
+    }
+
+}
+
+@media screen and (max-width: 920px) {
+
+}
+
