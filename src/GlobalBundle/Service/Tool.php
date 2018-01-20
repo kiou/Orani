@@ -19,6 +19,26 @@
             return false;
         }
 
+        /**
+         * Truncate a string
+         */
+        public function truncate($value,$max_caracteres){
+
+            if (strlen($value)>$max_caracteres){
+                $value = substr($value, 0, $max_caracteres);
+                $position_espace = strrpos($value, " ");
+
+                if($position_espace == false)
+                    $position_espace = strrpos($value, "-");
+
+                $value = substr($value, 0, $position_espace);
+                $value = $value."...";
+            }
+
+            return $value;
+
+        }
+
 	}
 
 ?>

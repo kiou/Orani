@@ -8,14 +8,13 @@
          * @var array
          * La liste des jours en FR
          */
-        private $jours = array('L','M','M','J','V','S','D');
+        private $jours = array('LU','MA','ME','JE','VE','SA','DI');
 
         /**
          * @var array
          * La liste des mois en FR
          */
         private $mois = array('Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre');
-
 
         /**
          * Retourne toutes les dates sur une année
