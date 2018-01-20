@@ -35,13 +35,16 @@ $(function(){
     });
 
     /* Fermer header mobile */
-    $(document).on('click','.headerMobile',function(){
-        $('.headerBtnMobile').removeClass('active');
-        $('.main').css({
-            'overflow-x':'hidden',
-            'overflow-y':'auto'
-        });
-        $(this).fadeOut(200);
+    $(document).on('click','.headerMobile',function(e){
+        if($(e.target).attr('class') == 'headerMobile'){
+             $('.headerBtnMobile').removeClass('active');
+
+             $('.main').css({
+                 'overflow-x':'hidden',
+                 'overflow-y':'auto'
+             });
+             $(this).fadeOut(200);
+        }
     });
 
         /* Hauteur responsive */
@@ -78,7 +81,7 @@ $(function(){
     $('ul.sf-menu').superfish();
 
     /* menu déroulant */
-    $(document).on('click','ul.sf-menu .noLink', function(e){
+    $(document).on('click','.navigation .noLink', function(e){
         e.preventDefault();
     });
 

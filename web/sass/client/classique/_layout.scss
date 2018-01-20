@@ -146,8 +146,39 @@
     width: 100%;
     height: 100%;
     z-index:1000;
-    background-color:rgba($gris,0.8);
+    background-color:rgba($grisClair,0.8);
     display: none;
+
+    .navigation{
+        width: 280px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        background-color: $gris;
+        overflow-y: auto;
+        a{
+            display: block;
+            color: $blanc;
+            padding:15px 0px 15px 20px;
+            background-color: $gris;
+            font-size: 14px;
+        }
+        ul{
+            ul{
+                a{
+                    padding-left: 30px;
+                    background-color: lighten($gris,3%);
+                }
+                ul{
+                    a{
+                        padding-left: 40px;
+                        background-color: lighten($gris,6%);
+                    }
+                }
+            }
+        }
+    }
 }
 
 .content{
