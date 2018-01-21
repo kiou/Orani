@@ -30,7 +30,6 @@ $(function(){
     $(document).on('click','.headerBtnMobile',function(){
         $(this).addClass('active');
 
-        $('.main').css({'overflow':'hidden'});
         $('.headerMobile').fadeIn(200);
     });
 
@@ -39,10 +38,6 @@ $(function(){
         if($(e.target).attr('class') == 'headerMobile'){
              $('.headerBtnMobile').removeClass('active');
 
-             $('.main').css({
-                 'overflow-x':'hidden',
-                 'overflow-y':'auto'
-             });
              $(this).fadeOut(200);
         }
     });
