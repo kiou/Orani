@@ -1,47 +1,77 @@
 @media screen and (max-width: 1200px) {
 
-    .inner{
-        margin: 0px 30px;
-    }
+    .inner{ margin: 0px 30px; }
 
     .newsletter{
-        .inner{
-            margin: 0px auto;
-        }
+        .inner{ margin: 0px auto; }
     }
 
-    .aboutimageRight{
-        padding: 110px;
-    }
+    .aboutimageRight{ padding: 110px; }
 
 }
 
 @media screen and (max-width: 1024px) {
 
-    .aboutimageRight{
-        padding: 90px;
-    }
+    .aboutimageRight{ padding: 90px; }
 
-    .inner{
-        margin: 0px 20px;
-    }
+    .inner{ margin: 0px 20px; }
 
 }
 
 @media screen and (max-width: 920px) {
 
     .header .navigation,
-    .headerReseaux{
-        display: none;
-    }
+    .headerReseaux{ display: none; }
 
-    .headerBtnMobile{
-        display: block;
-    }
+    .headerBtnMobile{ display: block; }
 
-    .headerPictos{
-        padding:30px 0px 30px 20px;
-    }
+    .headerPictos{ padding:30px 0px 30px 20px; }
+
+    .aboutimageRight{ padding: 60px; }
 
 }
 
+@media screen and (max-width: 800px) {
+
+    h1{
+        font-size: 32px;
+        line-height:32px;
+    }
+
+    h2{
+        font-size: 20px;
+        line-height:25px;
+        &.title{
+            font-size: 30px;
+            line-height:30px;
+        }
+    }
+
+    h3{
+        font-size: 17px;
+        line-height:21px;
+    }
+
+    .aboutimageLeft{ display: none;}
+
+    .aboutimageRight{
+        width: 100%;
+        @include border-radius($borderBox);
+    }
+
+    .inner{ margin: 0px 10px; }
+
+}
+
+@media screen and (max-width: 640px){
+
+    .aboutimageRight{ padding: 40px; }
+
+    .newsletter{
+        .inner{
+            max-width: 100%;
+            margin: 0px 10px;
+        }
+    }
+
+}
