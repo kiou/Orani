@@ -60,13 +60,6 @@ $(function(){
 
     });
 
-    /* Select 2 */
-    $('.select2').select2({
-        placeholder: function(){
-            $(this).data('placeholder');
-        }
-    });
-
     /* Changement de langue */
     $('.headerSelecteur select').on('change',function(){
         top.location.href = $(this).val();
