@@ -141,7 +141,7 @@ class UserController extends Controller
             $translator->trans('reinitialisation.breadcrumb.niveau2') => ''
         );
 
-        return $this->render('UserBundle:CLient:reinitialisation.html.twig', array(
+        return $this->render('UserBundle:Client:reinitialisation.html.twig', array(
                 'form' => $form->createView(),
                 'breadcrumb' => $breadcrumb
             )
