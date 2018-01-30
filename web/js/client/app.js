@@ -9,8 +9,8 @@ var toNewsletter = pathNewsletter.getAttribute('data-to');
  * Functions
  */
 /* Animation svg bloc newsletter */
-function newsletterWave(hide = false){
-    var direction = (hide) ? fromNewsletter  : toNewsletter ;
+function newsletterWave(hide){
+    var direction = (hide != undefined) ? fromNewsletter  : toNewsletter ;
 
     dynamics.animate(pathNewsletter,{
         d:direction
