@@ -187,12 +187,15 @@
 }
 
 .content{
+    background-color: $grisClair;
+    min-height: 500px;
     .inner{
         padding:30px 0px;
     }
 }
 
 .contentTitle{
+    background-color: $grisClair;
     h1{
         padding-top: 30px;
     }
@@ -274,4 +277,41 @@
 
 .blocFooter{
     text-align: center;
+}
+
+.footer{
+    background-color: $blanc;
+    .inner{
+        padding:60px 0px;
+    }
+}
+
+.footerLogo{
+    margin-bottom: 20px;
+}
+
+.footerCol{
+    float: left;
+    width: calc(100% / 3);
+    padding:0px 15px;
+    &:first-child{
+        padding:0px 15px 0px 0px;
+    }
+    &:last-child{
+        padding:0px 0px 0px 15px;
+    }
+}
+
+.bas{
+    background-color: $blanc;
+    text-align: center;
+    .inner{
+        border-top:1px solid darken($grisClair,5%);
+        padding:30px 0px;
+    }
+
+    p{
+        font-size: 14px;
+        line-height: 14px;
+    }
 }

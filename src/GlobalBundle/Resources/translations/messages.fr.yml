@@ -8,3 +8,11 @@ social:
         facebook: Partager sur facebook
         twitter: Partager sur twitter
         linkedin: Partager sur linkedin
+
+footer:
+    client:
+        contenu: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem dolor nobis recusandae tempora unde.
+
+bas:
+    client:
+        contenu: Copyright@ 2018 ORANI by ColocArts
