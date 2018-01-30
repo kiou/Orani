@@ -33,6 +33,17 @@
 
     .aboutimageRight{ padding: 60px; }
 
+    .footerCol{
+        width: 100%;
+        padding:0px 0px 25px 0px;
+        &:first-child{
+            padding:0px 0px 25px 0px;
+        }
+        &:last-child{
+            padding:0px 0px 25px 0px;
+        }
+    }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -73,7 +84,6 @@
     .recherche{
         padding: 30px;
     }
-
 }
 
 @media screen and (max-width: 640px){
