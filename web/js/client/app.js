@@ -19,7 +19,7 @@ $(function(){
         }
     });
 
-        /* Hauteur responsive */
+    /* Hauteur responsive */
     if($('.matchHeight').length != 0){
         $('.matchHeight').matchHeight();
     }
@@ -59,6 +59,10 @@ $(function(){
     /* Fermer la newsletter */
     $(document).on('click', '.newsletterClose', function () {
         $('.newsletter').removeClass('active');
+        if($('.message').length) $('.message').slideToggle(function(){
+            $('.message').remove();
+            $('input[name="userbundle_newsletter[email]"]').val('');
+        });
     });
 
     /* Valider la newsletter */
