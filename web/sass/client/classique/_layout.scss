@@ -199,15 +199,16 @@
 }
 
 .newsletter{
+    background-color: $gris;
     position: fixed;
     z-index:100;
-    left: 0px;
-    right: 0px;
+    left: -100px;
+    right: -100px;
     top: 0px;
     @include transition-property(transform);
     @include transition-duration(0.6s);
     @include transition-timing-function(ease-in-out);
-    @include transform(translateY(-100%));
+    @include transform(translateY(-170%) skew(-10deg, 10deg));
     display: none;
     &.active{
         @include transform(translateY(0px));
@@ -239,21 +240,9 @@
     }
 }
 
-.newsletterWave{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100%;
-    height: 100%;
-    fill: $gris;
-    z-index:-1;
-}
-
 .newsletterClose{
     position: absolute;
-    right: 0px;
+    right: 100px;
     top: 0px;
     color: $blanc;
     cursor: pointer;

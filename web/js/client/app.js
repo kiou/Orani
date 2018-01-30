@@ -1,27 +1,4 @@
 /**
- * Variables
- */
-var pathNewsletter = document.querySelector('.newsletterWave path');
-var fromNewsletter = pathNewsletter.getAttribute('d');
-var toNewsletter = pathNewsletter.getAttribute('data-to');
-
-/**
- * Functions
- */
-/* Animation svg bloc newsletter */
-function newsletterWave(hide){
-    var direction = (hide != undefined) ? fromNewsletter  : toNewsletter ;
-
-    dynamics.animate(pathNewsletter,{
-        d:direction
-    },{
-        type: dynamics.easeInOut,
-        duration: 600,
-        friction: 100
-    });
-}
-
-/**
  * Jquery
  */
 $(function(){
@@ -76,13 +53,11 @@ $(function(){
     /* Afficher la newsletter */
     $(document).on('click', '.openNewsletter', function (e) {
         e.preventDefault();
-        newsletterWave();
         $('.newsletter').addClass('active');
     });
 
     /* Fermer la newsletter */
     $(document).on('click', '.newsletterClose', function () {
-        newsletterWave(true);
         $('.newsletter').removeClass('active');
     });
 
