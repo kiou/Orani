@@ -1,12 +1,5 @@
 $(function(){
 
-    /* Select 2 */
-    $('.select2').select2({
-        placeholder: function(){
-            $(this).data('placeholder');
-        }
-    });
-
     /* onglet vertical */
     $('.tabs').tabs({
         collapsible: true,
